@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyTeletouch.Tests", "MyTele
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClientConfigurations", "ClientConfigurations\ClientConfigurations.csproj", "{BA351BF4-5480-49B6-93FA-6BC3A10C9AAD}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyTeletouch.DBContexts", "MyTeletouch.DBContexts\MyTeletouch.DBContexts.csproj", "{B294A58E-B503-4CE2-A288-873E7D9E3499}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{BA351BF4-5480-49B6-93FA-6BC3A10C9AAD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BA351BF4-5480-49B6-93FA-6BC3A10C9AAD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BA351BF4-5480-49B6-93FA-6BC3A10C9AAD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B294A58E-B503-4CE2-A288-873E7D9E3499}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B294A58E-B503-4CE2-A288-873E7D9E3499}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B294A58E-B503-4CE2-A288-873E7D9E3499}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B294A58E-B503-4CE2-A288-873E7D9E3499}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
