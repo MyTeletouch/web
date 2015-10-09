@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace MyTeletouch.Entities
 {
-    class BaseModel
+    public class BaseModel
     {
         public BaseModel()
         {
