@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace MyTeletouch.DBContexts
 {
-    class ProductContext : ApplicationDbContext
+    public class ProductDbContext : ApplicationDbContext
     {
         public DbSet<Product> Products { get; set; }
         public DbSet<CartItem> ShoppingCartItems { get; set; }
