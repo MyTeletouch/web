@@ -13,18 +13,23 @@ namespace MyTeletouch.Entities
         [Key]
         public string ItemId { get; set; }
 
-        [Required]
-        public string CartId { get; set; }
-
         // Foreign Key
         [Required]
         public int ProductId { get; set; }
+
+        [Required]
+        public string CartId { get; set; }
 
         [Required]
         [Range(1, 100, ErrorMessage = "Quantity must be between 1 and 100")]
         public int Quantity { get; set; }
 
         [ForeignKey("ProductId")]
-        public virtual Product product { get; set; }
+        public virtual Product Product { get; set; }
+
+        public static string GenerateItemId()
+        {
+            return Guid.NewGuid().ToString();
+        }
     }
 }
