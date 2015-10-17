@@ -21,6 +21,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Security", "Security", "{11481EEF-15E8-4A5E-AA6A-8DD525B596D8}"
+	ProjectSection(SolutionItems) = preProject
+		Security\AppSettingsSecrets.config = Security\AppSettingsSecrets.config
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Resources", "Resources\Resources.csproj", "{545098DC-8244-4448-AD5A-D51DF3256270}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -52,8 +57,15 @@ Global
 		{C8DD0B34-547D-4472-A53C-ED08112536FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C8DD0B34-547D-4472-A53C-ED08112536FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C8DD0B34-547D-4472-A53C-ED08112536FD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{545098DC-8244-4448-AD5A-D51DF3256270}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{545098DC-8244-4448-AD5A-D51DF3256270}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{545098DC-8244-4448-AD5A-D51DF3256270}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{545098DC-8244-4448-AD5A-D51DF3256270}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		EnterpriseLibraryConfigurationToolBinariesPathV6 = packages\EnterpriseLibrary.TransientFaultHandling.6.0.1304.0\lib\portable-net45+win+wp8;packages\EnterpriseLibrary.TransientFaultHandling.Data.6.0.1304.1\lib\NET45
 	EndGlobalSection
 EndGlobal

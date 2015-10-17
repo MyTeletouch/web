@@ -17,13 +17,13 @@ namespace MyTeletouch.Entities
         // Foreign Key
         [Required]
         [MaxLength(128, ErrorMessage = "Maximum length is {0} characters.")]
-        public string UserID { get; set; }
+        public string UserId { get; set; }
 
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = DateSettings.StandartDateFormat, ApplyFormatInEditMode = true)]
         public DateTime OrderDate { get; set; }
 
-        [ForeignKey("UserID")]
+        [ForeignKey("UserId")]
         public virtual ApplicationUser User { get; set; }
 
         [ScaffoldColumn(false)]
