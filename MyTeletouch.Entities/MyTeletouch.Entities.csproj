@@ -110,6 +110,10 @@
       <Project>{ba351bf4-5480-49b6-93fa-6bc3a10c9aad}</Project>
       <Name>ClientConfigurations</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Resources\Resources.csproj">
+      <Project>{545098dc-8244-4448-ad5a-d51df3256270}</Project>
+      <Name>Resources</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
