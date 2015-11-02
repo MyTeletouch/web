@@ -87,6 +87,10 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Migrations\201511022140460_InitialCreate.cs" />
+    <Compile Include="Migrations\201511022140460_InitialCreate.Designer.cs">
+      <DependentUpon>201511022140460_InitialCreate.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -107,6 +111,11 @@
       <Project>{354ce817-9c87-4bf5-a2c5-27180e8d70a9}</Project>
       <Name>MyTeletouch.Seeds</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201511022140460_InitialCreate.resx">
+      <DependentUpon>201511022140460_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
