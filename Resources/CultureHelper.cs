@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -98,6 +99,28 @@ namespace Resources
             {
                 return pattern;
             }
+        }
+
+        /// <summary>
+        /// Method extraxt unique locales information from <see cref="_supportedCultures"/>.
+        /// </summary>
+        /// <returns>If you we <see cref="_supportedCultures"/> is equal to "en-US", "es-US", "en-UK" we should to return ["en", "es"].</returns>
+        public static HashSet<string> GetSupportedLocales()
+        {
+            HashSet<string> supportedLocales = new HashSet<string>();
+            string[] locales;
+
+            foreach (string supportedCulture in _supportedCultures)
+            {
+                locales = Regex.Split(supportedCulture, "-");
+
+                if (locales.Length > 0 && supportedLocales.Contains(locales[0]))
+                {
+                    supportedLocales.Add(locales[0]);
+                }
+            }
+
+            return supportedLocales;
         }
 
         public static string GetCurrentCulture()

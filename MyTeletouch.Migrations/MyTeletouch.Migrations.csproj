@@ -9,12 +9,12 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{C8DD0B34-547D-4472-A53C-ED08112536FD}</ProjectGuid>
+    <ProjectGuid>{B72B9E7A-CDD0-4017-8524-9E6FA6A13D51}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>MyTeletouch.Repositories</RootNamespace>
-    <AssemblyName>MyTeletouch.Repositories</AssemblyName>
+    <RootNamespace>MyTeletouch.Migrations</RootNamespace>
+    <AssemblyName>MyTeletouch.Migrations</AssemblyName>
     <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <UseIISExpress>true</UseIISExpress>
     <IISExpressSSLPort />
@@ -87,13 +87,8 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CountryRepository.cs" />
-    <Compile Include="Intefraces\ICountryRepository.cs" />
-    <Compile Include="Intefraces\IShoppingCartRepository.cs" />
-    <Compile Include="IRepository.cs" />
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Repository.cs" />
-    <Compile Include="ShoppingCartRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\MyTeletouch.DBContexts\MyTeletouch.DBContexts.csproj">
@@ -104,12 +99,15 @@
       <Project>{72a25398-e8ac-416b-ac65-58b3998fe533}</Project>
       <Name>MyTeletouch.Entities</Name>
     </ProjectReference>
-    <ProjectReference Include="..\SharedStruct\SharedStruct.csproj">
-      <Project>{b716977d-f5db-4043-9113-7c60ef972c1d}</Project>
-      <Name>SharedStruct</Name>
+    <ProjectReference Include="..\MyTeletouch.Repositories\MyTeletouch.Repositories.csproj">
+      <Project>{c8dd0b34-547d-4472-a53c-ed08112536fd}</Project>
+      <Name>MyTeletouch.Repositories</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MyTeletouch.Seeds\MyTeletouch.Seeds.csproj">
+      <Project>{354ce817-9c87-4bf5-a2c5-27180e8d70a9}</Project>
+      <Name>MyTeletouch.Seeds</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
@@ -123,9 +121,9 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>49305</DevelopmentServerPort>
+          <DevelopmentServerPort>1203</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:49305/</IISUrl>
+          <IISUrl>http://localhost:1203/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

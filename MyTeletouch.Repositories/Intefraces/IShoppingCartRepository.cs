@@ -32,6 +32,6 @@ namespace MyTeletouch.Repositories.Intefraces
 
         int GetCount();
 
-        MigrateCart(string cartId, string userName);
+        //MigrateCart(string cartId, string userName);
     }
 }
