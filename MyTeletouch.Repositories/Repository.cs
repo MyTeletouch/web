@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MyTeletouch.Entities;
+using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Data.Entity.Infrastructure;
@@ -9,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace MyTeletouch.Repositories
 {
-    public class Repository<TEntity> : IRepository<TEntity> where TEntity : class
+    public class Repository<TEntity> : IRepository<TEntity> where TEntity : BaseModel
     {
         protected IDbSet<TEntity> dbSet { get; set; }
         protected DbContext Context { get; set; }

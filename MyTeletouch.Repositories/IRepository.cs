@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MyTeletouch.Entities;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
@@ -16,7 +17,7 @@ namespace MyTeletouch.Repositories
     /// <see cref="http://www.asp.net/mvc/overview/older-versions/getting-started-with-ef-5-using-mvc-4/implementing-the-repository-and-unit-of-work-patterns-in-an-asp-net-mvc-application"/>
     /// </summary>
     /// <typeparam name="TEntity"></typeparam>
-    interface IRepository<TEntity> where TEntity : class
+    interface IRepository<TEntity> where TEntity : BaseModel
     {
         /// <summary>
         /// Get all records
