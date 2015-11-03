@@ -96,11 +96,6 @@
   <ItemGroup>
     <Compile Include="ApplicationDbContext.cs" />
     <Compile Include="CountryDbContext.cs" />
-    <Compile Include="Migrations\201510061935484_InitialCreate.cs" />
-    <Compile Include="Migrations\201510061935484_InitialCreate.Designer.cs">
-      <DependentUpon>201510061935484_InitialCreate.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="ProductDbContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -117,11 +112,6 @@
       <Project>{b716977d-f5db-4043-9113-7c60ef972c1d}</Project>
       <Name>SharedStruct</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\201510061935484_InitialCreate.resx">
-      <DependentUpon>201510061935484_InitialCreate.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

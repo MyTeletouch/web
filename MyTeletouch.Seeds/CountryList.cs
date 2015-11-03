@@ -22,6 +22,9 @@ namespace MyTeletouch.Seeds
             }
         }
 
+        /// <summary>
+        /// Method will insert only countries, who don't exist in database.
+        /// </summary>
         public void InsertCountries()
         {
             HashSet<string> locales = CultureHelper.GetSupportedLocales();
