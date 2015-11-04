@@ -13,7 +13,7 @@ using MyTeletouch.Models;
 namespace MyTeletouch.Controllers
 {
     [Authorize]
-    public class AccountController : Controller
+    public class AccountController : BaseController
     {
         private ApplicationSignInManager _signInManager;
         private ApplicationUserManager _userManager;

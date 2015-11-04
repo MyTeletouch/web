@@ -7,6 +7,32 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyTeletouch", "MyTeletouch\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyTeletouch.Tests", "MyTeletouch.Tests\MyTeletouch.Tests.csproj", "{994700E0-B793-4238-9137-87FE3A320949}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClientConfigurations", "ClientConfigurations\ClientConfigurations.csproj", "{BA351BF4-5480-49B6-93FA-6BC3A10C9AAD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyTeletouch.DBContexts", "MyTeletouch.DBContexts\MyTeletouch.DBContexts.csproj", "{B294A58E-B503-4CE2-A288-873E7D9E3499}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyTeletouch.Entities", "MyTeletouch.Entities\MyTeletouch.Entities.csproj", "{72A25398-E8AC-416B-AC65-58B3998FE533}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyTeletouch.Repositories", "MyTeletouch.Repositories\MyTeletouch.Repositories.csproj", "{C8DD0B34-547D-4472-A53C-ED08112536FD}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{836E9C15-D274-4853-87EE-3859165B1216}"
+	ProjectSection(SolutionItems) = preProject
+		README.md = README.md
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Security", "Security", "{11481EEF-15E8-4A5E-AA6A-8DD525B596D8}"
+	ProjectSection(SolutionItems) = preProject
+		Security\AppSettingsSecrets.config = Security\AppSettingsSecrets.config
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Resources", "Resources\Resources.csproj", "{545098DC-8244-4448-AD5A-D51DF3256270}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharedStruct", "SharedStruct\SharedStruct.csproj", "{B716977D-F5DB-4043-9113-7C60EF972C1D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyTeletouch.Seeds", "MyTeletouch.Seeds\MyTeletouch.Seeds.csproj", "{354CE817-9C87-4BF5-A2C5-27180E8D70A9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyTeletouch.Migrations", "MyTeletouch.Migrations\MyTeletouch.Migrations.csproj", "{B72B9E7A-CDD0-4017-8524-9E6FA6A13D51}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,8 +47,43 @@ Global
 		{994700E0-B793-4238-9137-87FE3A320949}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{994700E0-B793-4238-9137-87FE3A320949}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{994700E0-B793-4238-9137-87FE3A320949}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BA351BF4-5480-49B6-93FA-6BC3A10C9AAD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BA351BF4-5480-49B6-93FA-6BC3A10C9AAD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BA351BF4-5480-49B6-93FA-6BC3A10C9AAD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BA351BF4-5480-49B6-93FA-6BC3A10C9AAD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B294A58E-B503-4CE2-A288-873E7D9E3499}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B294A58E-B503-4CE2-A288-873E7D9E3499}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B294A58E-B503-4CE2-A288-873E7D9E3499}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B294A58E-B503-4CE2-A288-873E7D9E3499}.Release|Any CPU.Build.0 = Release|Any CPU
+		{72A25398-E8AC-416B-AC65-58B3998FE533}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{72A25398-E8AC-416B-AC65-58B3998FE533}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{72A25398-E8AC-416B-AC65-58B3998FE533}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{72A25398-E8AC-416B-AC65-58B3998FE533}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C8DD0B34-547D-4472-A53C-ED08112536FD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C8DD0B34-547D-4472-A53C-ED08112536FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C8DD0B34-547D-4472-A53C-ED08112536FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C8DD0B34-547D-4472-A53C-ED08112536FD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{545098DC-8244-4448-AD5A-D51DF3256270}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{545098DC-8244-4448-AD5A-D51DF3256270}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{545098DC-8244-4448-AD5A-D51DF3256270}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{545098DC-8244-4448-AD5A-D51DF3256270}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B716977D-F5DB-4043-9113-7C60EF972C1D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B716977D-F5DB-4043-9113-7C60EF972C1D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B716977D-F5DB-4043-9113-7C60EF972C1D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B716977D-F5DB-4043-9113-7C60EF972C1D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{354CE817-9C87-4BF5-A2C5-27180E8D70A9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{354CE817-9C87-4BF5-A2C5-27180E8D70A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{354CE817-9C87-4BF5-A2C5-27180E8D70A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{354CE817-9C87-4BF5-A2C5-27180E8D70A9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B72B9E7A-CDD0-4017-8524-9E6FA6A13D51}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B72B9E7A-CDD0-4017-8524-9E6FA6A13D51}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B72B9E7A-CDD0-4017-8524-9E6FA6A13D51}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B72B9E7A-CDD0-4017-8524-9E6FA6A13D51}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		EnterpriseLibraryConfigurationToolBinariesPathV6 = packages\EnterpriseLibrary.TransientFaultHandling.6.0.1304.0\lib\portable-net45+win+wp8;packages\EnterpriseLibrary.TransientFaultHandling.Data.6.0.1304.1\lib\NET45
 	EndGlobalSection
 EndGlobal
