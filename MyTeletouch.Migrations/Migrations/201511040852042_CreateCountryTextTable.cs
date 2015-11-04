@@ -3,9 +3,9 @@ namespace MyTeletouch.Migrations.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class CreateCountryTable : DbMigration
+    public partial class CreateCountryTextTable : DbMigration
     {
-        const string tableName = "dbo.Countries";
+        const string tableName = "dbo.CountryTexts";
 
         public override void Up()
         {
@@ -14,19 +14,22 @@ namespace MyTeletouch.Migrations.Migrations
                 c => new
                 {
                     Id = c.Int(nullable: false, identity: true),
-                    CountryCode = c.String(nullable: false, maxLength: 2),
+                    CountryId = c.Int(nullable: false),
+                    Locale = c.String(nullable: false, maxLength: 2),
+                    Name = c.String(nullable: false, maxLength: 128),
                     CreatedAt = c.DateTime(nullable: false, storeType: "datetime"),
                     UpdatedAt = c.DateTime(nullable: false, storeType: "datetime")
                 })
              .PrimaryKey(t => t.Id);
 
-            // http://stackoverflow.com/questions/13070431/unique-constraint-with-entity-framework-using-code-first-migrations
-            CreateIndex(tableName, "CountryCode", unique: true);
+            CreateIndex(tableName, "CountryId");
+            AddForeignKey(tableName, "CountryId", "Countries", "Id");
         }
-        
+
         public override void Down()
         {
-            DropIndex(tableName, "CountryCode");
+            DropIndex(tableName, "CountryId");
+            DropForeignKey(tableName, "CountryId", "Countries");
 
             DropTable(tableName);
         }
