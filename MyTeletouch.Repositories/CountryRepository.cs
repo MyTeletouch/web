@@ -30,11 +30,11 @@ namespace MyTeletouch.Repositories
                 var myDbCountry = new Country(country.CountryCode);
                 this.Insert(myDbCountry);
 
-                return dbCountry.CountryId;
+                return dbCountry.Id;
             }
             else
             {
-                return dbCountry.CountryId;
+                return dbCountry.Id;
             }
         }
 

@@ -14,11 +14,9 @@ namespace MyTeletouch.Entities
             this.CountryCode = ExternalCountryCode;
         }
 
-        [Key]
-        public int CountryId { get; set; }
-
         [Required]
         [Index("CountryCode", IsUnique = true)]
+        [MaxLength(2, ErrorMessage = "")]
         public string CountryCode { get; set; }
     }
 }
