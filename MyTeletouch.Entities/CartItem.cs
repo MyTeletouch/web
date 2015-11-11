@@ -10,9 +10,6 @@ namespace MyTeletouch.Entities
 {
     public class CartItem : BaseModel
     {
-        [Key]
-        public string ItemId { get; set; }
-
         // Foreign Key
         [Required]
         public int ProductId { get; set; }

@@ -47,7 +47,7 @@ namespace MyTeletouch.Repositories
                 // Create a new cart item, if no cart item exists.
                 cartItem = new CartItem
                 {
-                    ItemId = CartItem.GenerateItemId(),
+                    Id = CartItem.GenerateItemId(),
                     ProductId = id,
                     CartId = ShoppingCartId,
                     Product = product,
