@@ -9,6 +9,11 @@ namespace MyTeletouch.Entities
 {
     public class Country : BaseModel
     {
+        public Country()
+        {
+
+        }
+
         public Country(string ExternalCountryCode)
         {
             this.CountryCode = ExternalCountryCode;

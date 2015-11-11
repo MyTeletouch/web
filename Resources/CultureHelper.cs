@@ -114,9 +114,9 @@ namespace Resources
             {
                 locales = Regex.Split(supportedCulture, "-");
 
-                if (locales.Length > 0 && supportedLocales.Contains(locales[0]))
+                if (locales != null && locales.Length > 0)
                 {
-                    supportedLocales.Add(locales[0]);
+                    supportedLocales.Add(locales.First());
                 }
             }
 

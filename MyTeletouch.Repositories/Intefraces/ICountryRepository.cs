@@ -18,5 +18,7 @@ namespace MyTeletouch.Repositories.Intefraces
         /// <param name="country"></param>
         /// <returns>Give us information for country database id.</returns>
         int AddCountry(CountryInfo country);
+
+        void AddOrUpdateCountryLocale(CountryText countryLocale);
     }
 }

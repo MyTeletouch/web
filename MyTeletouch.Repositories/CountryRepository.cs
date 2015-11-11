@@ -3,6 +3,7 @@ using MyTeletouch.Repositories.Intefraces;
 using System.Linq;
 using MyTeletouch.DBContexts;
 using SharedStruct;
+using System.Data.Entity.Migrations;
 
 namespace MyTeletouch.Repositories
 {
@@ -12,7 +13,7 @@ namespace MyTeletouch.Repositories
 
         public CountryRepository() : base(new CountryDbContext())
         {
-            _db = dbSet as CountryDbContext;
+            _db = Context as CountryDbContext;
         }
 
         /// <summary>
@@ -22,19 +23,29 @@ namespace MyTeletouch.Repositories
         /// <returns>Give us information for country database id.</returns>
         public int AddCountry(CountryInfo country)
         {
-            var dbCountry = _db.Countries
-                .FirstOrDefault(c => c.CountryCode.Equals(country.CountryCode));
+            Country dbCountry = FindCountryByCountryCode(country.CountryCode);
 
             if (dbCountry == null)
             {
                 var myDbCountry = new Country(country.CountryCode);
                 this.Insert(myDbCountry);
 
-                return dbCountry.Id;
+                return myDbCountry.Id;
             }
             else
             {
                 return dbCountry.Id;
+            }
+        }
+
+        public void AddOrUpdateCountryLocale(CountryText countryLocale)
+        {
+            CountryText locale = _db.CountryLocales.FirstOrDefault(c => c.CountryId == countryLocale.CountryId && c.Locale.Equals(countryLocale.Locale));
+
+            if (locale == null)
+            {
+                _db.CountryLocales.Add(countryLocale);
+                this.Context.SaveChanges();
             }
         }
 
