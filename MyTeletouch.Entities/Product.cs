@@ -9,10 +9,6 @@ namespace MyTeletouch.Entities
 {
     public class Product : BaseModel
     {
-        [ScaffoldColumn(false)]
-        [Key]
-        public int ProductId { get; set; }
-
         [Required, StringLength(100), Display(Name = "Name")]
         public string Name { get; set; }
 

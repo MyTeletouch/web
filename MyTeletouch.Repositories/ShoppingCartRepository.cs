@@ -38,7 +38,7 @@ namespace MyTeletouch.Repositories
 
             if (cartItem == null)
             {
-                Product product = _db.Products.SingleOrDefault(p => p.ProductId == id);
+                Product product = _db.Products.SingleOrDefault(p => p.Id == id);
                 if (product == null)
                 {
                     throw new Exception(string.Format("Product with '{0}' doesn't exist", id));
@@ -47,7 +47,7 @@ namespace MyTeletouch.Repositories
                 // Create a new cart item, if no cart item exists.
                 cartItem = new CartItem
                 {
-                    ItemId = CartItem.GenerateItemId(),
+                    Id = BaseModel.GenerateId(),
                     ProductId = id,
                     CartId = ShoppingCartId,
                     Product = product,

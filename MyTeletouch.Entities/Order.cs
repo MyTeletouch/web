@@ -11,9 +11,6 @@ namespace MyTeletouch.Entities
 {
     public class Order
     {
-        [Key]
-        public int OrderId { get; set; }
-
         // Foreign Key
         [Required]
         [MaxLength(128, ErrorMessage = "Maximum length is {0} characters.")]

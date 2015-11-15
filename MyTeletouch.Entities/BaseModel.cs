@@ -16,7 +16,7 @@ namespace MyTeletouch.Entities
         }
 
         [Key]
-        public int Id { get; set; }
+        public virtual int Id { get; set; }
 
         [DataType(DataType.DateTime)]
         [Required]
@@ -25,5 +25,10 @@ namespace MyTeletouch.Entities
         [DataType(DataType.DateTime)]
         [Required]
         public DateTime UpdatedAt { get; set; }
+
+        public static string GenerateId()
+        {
+            return Guid.NewGuid().ToString();
+        }
     }
 }

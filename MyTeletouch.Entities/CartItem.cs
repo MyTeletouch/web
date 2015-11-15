@@ -10,8 +10,11 @@ namespace MyTeletouch.Entities
 {
     public class CartItem : BaseModel
     {
+        // https://msdn.microsoft.com/en-us/library/51y09td4.aspx
+        // new Modifier
+        // Used to hide an inherited member from a base class member.
         [Key]
-        public string ItemId { get; set; }
+        public new string Id { get; set; }
 
         // Foreign Key
         [Required]
@@ -26,10 +29,5 @@ namespace MyTeletouch.Entities
 
         [ForeignKey("ProductId")]
         public virtual Product Product { get; set; }
-
-        public static string GenerateItemId()
-        {
-            return Guid.NewGuid().ToString();
-        }
     }
 }

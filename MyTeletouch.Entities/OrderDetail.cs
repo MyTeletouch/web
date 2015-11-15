@@ -9,9 +9,6 @@ namespace MyTeletouch.Entities
 {
     public class OrderDetail
     {
-        [Key]
-        public int OrderDetailId { get; set; }
-
         // Foreign Key
         public int OrderId { get; set; }
 
