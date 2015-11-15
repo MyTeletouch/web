@@ -15,6 +15,9 @@ namespace MyTeletouch.Entities
             UpdatedAt = DateTime.Now;
         }
 
+        [Key]
+        public int Id { get; set; }
+
         [DataType(DataType.DateTime)]
         [Required]
         public DateTime CreatedAt { get; set; }
