@@ -26,5 +26,10 @@ namespace MyTeletouch.Controllers
 
             return View();
         }
+
+        public ActionResult AngularHomePage()
+        {
+            return View();
+        }
     }
 }
