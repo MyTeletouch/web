@@ -1,4 +1,5 @@
-﻿using MyTeletouch.Repositories;
+﻿using MyTeletouch.Entities;
+using MyTeletouch.Repositories;
 using MyTeletouch.Repositories.Intefraces;
 using Resources;
 using SharedStruct;
@@ -8,7 +9,7 @@ namespace MyTeletouch.Seeds
 {
     public class CountryList
     {
-        private ICountryRepository _dbRepository = new CountryRepository();
+        private readonly ICountryRepository _dbRepository = new CountryRepository();
 
         public struct CountryLocaleList
         {
@@ -45,12 +46,20 @@ namespace MyTeletouch.Seeds
 
         private void InsertAvailableCountries(List<CountryLocaleList> availableCountries)
         {
+            CountryText countryLocale;
             foreach (CountryLocaleList countryRowRecord in availableCountries)
             {
                 // Insert for each locale country information.
                 foreach (CountryInfo countryInfo in countryRowRecord.Countries)
                 {
-                    _dbRepository.AddCountry(countryInfo);
+                    countryLocale = new CountryText();
+
+                    // Insert Country
+                    countryLocale.CountryId = _dbRepository.AddCountry(countryInfo);
+                    countryLocale.Locale = countryRowRecord.Locale;
+                    countryLocale.Name = countryInfo.CountryName;
+
+                    _dbRepository.AddOrUpdateCountryLocale(countryLocale);
                 }
             }
         }

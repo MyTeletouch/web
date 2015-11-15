@@ -89,10 +89,12 @@
   <ItemGroup>
     <Compile Include="CountryRepository.cs" />
     <Compile Include="Intefraces\ICountryRepository.cs" />
+    <Compile Include="Intefraces\IRepositoryLocale.cs" />
     <Compile Include="Intefraces\IShoppingCartRepository.cs" />
     <Compile Include="IRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repository.cs" />
+    <Compile Include="RepositoryLocale.cs" />
     <Compile Include="ShoppingCartRepository.cs" />
   </ItemGroup>
   <ItemGroup>
