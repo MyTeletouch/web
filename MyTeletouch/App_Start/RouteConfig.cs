@@ -1,4 +1,5 @@
 ﻿using Resources;
+using RouteConfigEntities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,15 +11,17 @@ namespace MyTeletouch
 {
     public class RouteConfig
     {
+        const string BASE_URL = "{culture}/";
+
         public static void RegisterRoutes(RouteCollection routes)
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
-            routes = RouteConfig.RegisterAngularRoutes(routes);
+            routes = RegisterAngularRoutes(routes);
 
             routes.MapRoute(
                 name: "Default",
-                url: "{culture}/{controller}/{action}/{id}",
+                url: BASE_URL + "{controller}/{action}/{id}",
                 defaults: new
                 {
                     culture = CultureHelper.GetDefaultCulture(),
@@ -37,21 +40,39 @@ namespace MyTeletouch
         /// <returns></returns>
         private static RouteCollection RegisterAngularRoutes(RouteCollection routes)
         {
-            Dictionary<string, string> angularRoutes = new Dictionary<string, string>();
-            angularRoutes["AngularHomePage"] = "angular/homepage";
+            List<AngularMapRouteEntity> angularRoutes = GetAngularApplicationRoutes();
 
-            foreach (KeyValuePair<string, string> entry in angularRoutes)
+            foreach (AngularMapRouteEntity angularMapRouteEntity in angularRoutes)
             {
+                if (angularMapRouteEntity.MapRouteEntity == null)
+                {
+                    throw new Exception(string.Format("MapRouteEntity can't be blank."));
+                }
+
                 routes.MapRoute(
-                    name: entry.Key,
-                    url: entry.Value,
+                    name: angularMapRouteEntity.RouteName,
+                    url: angularMapRouteEntity.RouteURL,
                     defaults: new
                     {
-                        controller = "Home",
-                        action = "AngularHomePage"
+                        culture = CultureHelper.GetDefaultCulture(),
+                        controller = angularMapRouteEntity.MapRouteEntity.Controller,
+                        action = angularMapRouteEntity.MapRouteEntity.ActionMethod
                     }
                 );
             }
+
+            return routes;
+        }
+
+        private static List<AngularMapRouteEntity> GetAngularApplicationRoutes()
+        {
+            List<AngularMapRouteEntity> routes = new List<AngularMapRouteEntity>();
+
+            // Form: UserShippingAddress
+            var userShippingAddress = 
+                new AngularMapRouteEntity("AngularUserShippingAddress", BASE_URL + "/angular/usershippingaddress");
+            userShippingAddress.MapRouteEntity = new MapRouteEntity("AngularLoader", "ApplicationUserShippingAddressPageCtrl");
+            routes.Add(userShippingAddress);
 
             return routes;
         }

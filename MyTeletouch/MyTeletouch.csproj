@@ -178,6 +178,7 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AngularLoaderController.cs" />
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -191,6 +192,7 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="AngularTemplates\home.html" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="favicon.ico" />
@@ -253,8 +255,8 @@
     <Content Include="Views\Home\AngularHomePage.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="AngularTemplates\" />
     <Folder Include="App_Data\" />
+    <Folder Include="Views\AngularLoader\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -268,6 +270,10 @@
     <ProjectReference Include="..\Resources\Resources.csproj">
       <Project>{545098dc-8244-4448-ad5a-d51df3256270}</Project>
       <Name>Resources</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RouteConfigEntities\RouteConfigEntities.csproj">
+      <Project>{33d63918-bc89-4663-9a89-3fdae72e799c}</Project>
+      <Name>RouteConfigEntities</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
