@@ -1,0 +1,20 @@
+﻿
+@{
+    ViewBag.Title = "ApplicationUserShippingAddressPageCtrl";
+}
+<section id="bodyContainer" ng-app="Myteletouch">
+    <section id="content">
+        <section id="container">
+            <section ng-view></section>
+        </section>
+    </section>
+</section>
+
+@section scripts {
+    @Scripts.Render("~/Scripts/angular.js")
+    <script src="https://code.angularjs.org/1.4.7/angular-resource.min.js"></script>
+    <script src="https://code.angularjs.org/1.4.7/angular-route.min.js"></script>
+    
+    @Scripts.Render("~/Scripts/angular/application.js")
+}
+

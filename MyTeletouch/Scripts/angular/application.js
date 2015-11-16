@@ -1,7 +1,7 @@
 ﻿(function () {
     'use strict';
 
-    angular.module('TwitterBackup', ['ngResource', 'ngRoute'])
+    angular.module('Myteletouch', ['ngResource', 'ngRoute'])
         .config(configuration)
 
         .directive('myMaxlength', function () {
@@ -136,7 +136,7 @@
         $routeProvider
 
             // Load information for shipping address
-            .when('/angular/usershippingaddress', {
+            .when('/:culture/angular/usershippingaddress', {
                 controller: 'ApplicationUserShippingAddressPageCtrl',
                 templateUrl: '/AngularTemplates/home.html'
             });

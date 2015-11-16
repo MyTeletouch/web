@@ -70,7 +70,7 @@ namespace MyTeletouch
 
             // Form: UserShippingAddress
             var userShippingAddress = 
-                new AngularMapRouteEntity("AngularUserShippingAddress", BASE_URL + "/angular/usershippingaddress");
+                new AngularMapRouteEntity("AngularUserShippingAddress", BASE_URL + "angular/usershippingaddress");
             userShippingAddress.MapRouteEntity = new MapRouteEntity("AngularLoader", "ApplicationUserShippingAddressPageCtrl");
             routes.Add(userShippingAddress);
 
