@@ -142,7 +142,7 @@
     <comment>Shipping Address</comment>
   </data>
   <data name="zip" xml:space="preserve">
-    <value>zip</value>
+    <value>ZIP / Postal Code</value>
     <comment>Shipping Address</comment>
   </data>
   <data name="country" xml:space="preserve">

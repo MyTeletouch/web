@@ -142,7 +142,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to zip.
+        ///   Looks up a localized string similar to ZIP / Postal Code.
         /// </summary>
         public static string zip {
             get {

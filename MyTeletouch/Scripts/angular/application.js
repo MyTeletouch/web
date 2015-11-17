@@ -138,7 +138,7 @@
             // Load information for shipping address
             .when('/:culture/angular/usershippingaddress', {
                 controller: 'ApplicationUserShippingAddressPageCtrl',
-                templateUrl: '/AngularTemplates/home.html'
+                templateUrl: '/AngularTemplates/usershippingaddress.html'
             });
 
         // use the HTML5 History API
