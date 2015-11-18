@@ -1,4 +1,5 @@
 ﻿using MyTeletouch.Entities;
+using MyTeletouch.Entities.ViewModels.CountryViewModel;
 using SharedStruct;
 using System;
 using System.Collections.Generic;
@@ -20,5 +21,12 @@ namespace MyTeletouch.Repositories.Intefraces
         int AddCountry(CountryInfo country);
 
         void AddOrUpdateCountryLocale(CountryText countryLocale);
+
+        /// <summary>
+        /// Get all countries by locale and after that generate list with <seealso cref="CountryListItem"/>
+        /// </summary>
+        /// <param name="locale"></param>
+        /// <returns></returns>
+        IEnumerable<CountryListItem> GetCountryList(string locale);
     }
 }
