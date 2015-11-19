@@ -33,6 +33,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyTeletouch.Seeds", "MyTele
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyTeletouch.Migrations", "MyTeletouch.Migrations\MyTeletouch.Migrations.csproj", "{B72B9E7A-CDD0-4017-8524-9E6FA6A13D51}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RouteConfigEntities", "RouteConfigEntities\RouteConfigEntities.csproj", "{33D63918-BC89-4663-9A89-3FDAE72E799C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -79,6 +81,10 @@ Global
 		{B72B9E7A-CDD0-4017-8524-9E6FA6A13D51}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B72B9E7A-CDD0-4017-8524-9E6FA6A13D51}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B72B9E7A-CDD0-4017-8524-9E6FA6A13D51}.Release|Any CPU.Build.0 = Release|Any CPU
+		{33D63918-BC89-4663-9A89-3FDAE72E799C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{33D63918-BC89-4663-9A89-3FDAE72E799C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{33D63918-BC89-4663-9A89-3FDAE72E799C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{33D63918-BC89-4663-9A89-3FDAE72E799C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
