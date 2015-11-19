@@ -24,10 +24,9 @@ namespace MyTeletouch.Controllers
         /// Route: api/CountryWebAPI/GetCountryList
         /// </summary>
         /// <returns></returns>
-        public IEnumerable<CountryListItem> GetCountryList()
+        public IEnumerable<CountryListItem> GetCountryList(string locale)
         {
-            string currrentLocale = "en";
-            IEnumerable<CountryListItem> countries = _countryRepository.GetCountryList(currrentLocale);
+            IEnumerable<CountryListItem> countries = _countryRepository.GetCountryList(locale);
 
             return countries;
         }

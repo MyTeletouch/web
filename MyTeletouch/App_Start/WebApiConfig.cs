@@ -15,6 +15,16 @@ namespace MyTeletouch
             config.MapHttpAttributeRoutes();
 
             config.Routes.MapHttpRoute(
+                name: "GetCountryList",
+                routeTemplate: "api/v1/{locale}/countries/countrylist",
+                defaults: new
+                {
+                    controller = "CountryWebAPI",
+                    action = "GetCountryList"
+                }
+            );
+
+            config.Routes.MapHttpRoute(
                 name: "DefaultApi",
                 routeTemplate: "api/{controller}/{id}",
                 defaults: new { id = RouteParameter.Optional }
