@@ -1,4 +1,6 @@
-﻿(function () {
+﻿// http://www.developerhandbook.com/typescript/writing-angularjs-1-x-with-typescript/
+
+(function () {
     'use strict';
 
     angular.module('Myteletouch', ['ngResource', 'ngRoute'])
@@ -119,7 +121,7 @@
 
                 
 
-            }]); // END TwitterBackupHomePageCtrl
+            }]); // END ApplicationUserShippingAddressPageCtrl
 
     // Load configurations
     configuration.$inject = ['$routeProvider', '$locationProvider'];
