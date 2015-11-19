@@ -59,5 +59,95 @@ namespace Resources {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to City.
+        /// </summary>
+        public static string city {
+            get {
+                return ResourceManager.GetString("city", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Country.
+        /// </summary>
+        public static string country {
+            get {
+                return ResourceManager.GetString("country", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Phone Number.
+        /// </summary>
+        public static string phone_number {
+            get {
+                return ResourceManager.GetString("phone_number", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Primary Address.
+        /// </summary>
+        public static string primary_address {
+            get {
+                return ResourceManager.GetString("primary_address", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Secondary Address.
+        /// </summary>
+        public static string secondary_address {
+            get {
+                return ResourceManager.GetString("secondary_address", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ship to this adddress.
+        /// </summary>
+        public static string ship_to_this_address {
+            get {
+                return ResourceManager.GetString("ship_to_this_address", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to State/Province/Region.
+        /// </summary>
+        public static string state_province_region {
+            get {
+                return ResourceManager.GetString("state_province_region", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to {0} should be {1} characters or less..
+        /// </summary>
+        public static string validation_max_field_lenght {
+            get {
+                return ResourceManager.GetString("validation_max_field_lenght", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to {0} is required..
+        /// </summary>
+        public static string validation_required_field {
+            get {
+                return ResourceManager.GetString("validation_required_field", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to zip.
+        /// </summary>
+        public static string zip {
+            get {
+                return ResourceManager.GetString("zip", resourceCulture);
+            }
+        }
     }
 }

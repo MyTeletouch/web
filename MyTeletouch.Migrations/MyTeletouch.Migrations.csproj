@@ -99,6 +99,10 @@
     <Compile Include="Migrations\201511040852042_CreateCountryTextTable.Designer.cs">
       <DependentUpon>201511040852042_CreateCountryTextTable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201511151917096_CreateApplicationUserShippingAddress.cs" />
+    <Compile Include="Migrations\201511151917096_CreateApplicationUserShippingAddress.Designer.cs">
+      <DependentUpon>201511151917096_CreateApplicationUserShippingAddress.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -129,6 +133,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201511040852042_CreateCountryTextTable.resx">
       <DependentUpon>201511040852042_CreateCountryTextTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201511151917096_CreateApplicationUserShippingAddress.resx">
+      <DependentUpon>201511151917096_CreateApplicationUserShippingAddress.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
