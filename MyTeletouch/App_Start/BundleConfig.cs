@@ -21,6 +21,8 @@ namespace MyTeletouch
 
         private static void RegisterJavascriptBundles(BundleCollection bundles)
         {
+            BundleConfig.RegisterAngularjsBundles(bundles);
+
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
                         "~/Scripts/jquery-{version}.js"));
 
@@ -39,6 +41,14 @@ namespace MyTeletouch
             // Typescript
             bundles.Add(new ScriptBundle("~/bundles/typescript").Include(
                       "~/Scripts/typescript/configurations/Routes.js"));
+        }
+
+        private static void RegisterAngularjsBundles(BundleCollection bundles)
+        {
+            bundles.Add(new ScriptBundle("~/bundles/application-angular").Include(
+                    "~/Scripts/angular/app.module.js",
+                    "~/Scripts/angular/app.routes.js",
+                    "~/Scripts/angular/controllers/ApplicationUserShippingAddressController.js"));
         }
     }
 }
