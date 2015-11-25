@@ -18,13 +18,15 @@ module Myteletouch {
     * @param $locationProvider Use the $locationProvider to configure how the
     */
     function configurations($routeProvider: ng.route.IRouteProvider, $locationProvider: ng.ILocationProvider) {
+        var viewFolder = '/Scripts/angular/views';
+        
         // Configure the routes
         $routeProvider
 
         // Load information for shipping address
             .when('/:culture/angular/usershippingaddress', {
                 controller: 'ApplicationUserShippingAddressController',
-                templateUrl: '/AngularTemplates/usershippingaddress.html'
+                templateUrl: viewFolder + '/usershippingaddress/form.html'
             })
             .otherwise({
                 redirectTo: "/"

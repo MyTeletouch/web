@@ -43,7 +43,17 @@
     <!-- ZIP / Postal Code -->
 
     <!-- Country -->
-
+    <section>
+        <label class="control-label" for="country">Country</label>
+        <input type="search" class="form-control" ng-model="filterCountries" placeholder="Filter country"/>
+        <select id="country"
+                class="form-control"
+                ng-init="country = countries[0]"
+                ng-options="country.Name for country in (countries | filter:filterCountries) track by country.Id"
+                ng-model="country">
+            <option value="">Choose a country:</option>
+        </select>
+    </section>
     <!-- Country -->
 
     <!-- ZIP / Postal Code -->

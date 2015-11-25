@@ -196,7 +196,6 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="AngularTemplates\usershippingaddress.html" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="favicon.ico" />
@@ -206,6 +205,7 @@
     <Content Include="Scripts\angular-mocks.js" />
     <Content Include="Scripts\angular.js" />
     <Content Include="Scripts\angular.min.js" />
+    <Content Include="Scripts\angular\views\userShippingAddress\form.html" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\angular.min.js.map" />
@@ -260,10 +260,9 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Scripts\angular\directives\" />
+    <Folder Include="Scripts\angular\entities\" />
     <Folder Include="Scripts\angular\filters\" />
-    <Folder Include="Scripts\angular\models\" />
     <Folder Include="Scripts\angular\services\" />
-    <Folder Include="Scripts\typescript\js-output\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -298,8 +297,10 @@
   <ItemGroup>
     <TypeScriptCompile Include="Scripts\angular\app.module.ts" />
     <TypeScriptCompile Include="Scripts\angular\app.routes.ts" />
+    <TypeScriptCompile Include="Scripts\angular\configurations\RouteLink.ts" />
     <TypeScriptCompile Include="Scripts\angular\controllers\ApplicationUserShippingAddressController.ts" />
-    <TypeScriptCompile Include="Scripts\typescript\configurations\Routes.ts" />
+    <TypeScriptCompile Include="Scripts\angular\configurations\Routes.ts" />
+    <TypeScriptCompile Include="Scripts\angular\models\viewModels\countryViewModels\CountryListItem.ts" />
     <TypeScriptCompile Include="Scripts\typings\angularjs\angular-animate.d.ts" />
     <TypeScriptCompile Include="Scripts\typings\angularjs\angular-cookies.d.ts" />
     <TypeScriptCompile Include="Scripts\typings\angularjs\angular-mocks.d.ts" />
