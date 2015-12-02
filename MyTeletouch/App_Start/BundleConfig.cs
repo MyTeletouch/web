@@ -48,6 +48,9 @@ namespace MyTeletouch
             bundles.Add(new ScriptBundle("~/bundles/application-angular").Include(
                     "~/Scripts/angular/app.module.js",
                     "~/Scripts/angular/app.routes.js",
+                    // Database Services
+                    "~/Scripts/angular/services/database/ApplicationUserShippingAddressDatabaseService.js",
+                    // Controllers
                     "~/Scripts/angular/controllers/ApplicationUserShippingAddressController.js"));
         }
     }

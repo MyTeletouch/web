@@ -1,4 +1,6 @@
 ﻿module Myteletouch {
+    "use strict";
+
     export module Configurations {
         export class RouteLink {
             public key: string;

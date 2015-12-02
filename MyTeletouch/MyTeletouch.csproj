@@ -262,7 +262,6 @@
     <Folder Include="Scripts\angular\directives\" />
     <Folder Include="Scripts\angular\entities\" />
     <Folder Include="Scripts\angular\filters\" />
-    <Folder Include="Scripts\angular\services\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -300,7 +299,13 @@
     <TypeScriptCompile Include="Scripts\angular\configurations\RouteLink.ts" />
     <TypeScriptCompile Include="Scripts\angular\controllers\ApplicationUserShippingAddressController.ts" />
     <TypeScriptCompile Include="Scripts\angular\configurations\Routes.ts" />
+    <TypeScriptCompile Include="Scripts\angular\services\database\ApplicationUserShippingAddressDatabaseService.ts" />
+    <TypeScriptCompile Include="Scripts\angular\models\ApplicationUserShippingAddress.ts" />
+    <TypeScriptCompile Include="Scripts\angular\models\BaseModel.ts" />
+    <TypeScriptCompile Include="Scripts\angular\models\Country.ts" />
+    <TypeScriptCompile Include="Scripts\angular\models\CountryText.ts" />
     <TypeScriptCompile Include="Scripts\angular\models\viewModels\countryViewModels\CountryListItem.ts" />
+    <TypeScriptCompile Include="Scripts\angular\services\database\interfaces\IDatabaseService.ts" />
     <TypeScriptCompile Include="Scripts\typings\angularjs\angular-animate.d.ts" />
     <TypeScriptCompile Include="Scripts\typings\angularjs\angular-cookies.d.ts" />
     <TypeScriptCompile Include="Scripts\typings\angularjs\angular-mocks.d.ts" />

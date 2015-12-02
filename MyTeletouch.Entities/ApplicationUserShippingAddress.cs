@@ -20,7 +20,7 @@ namespace MyTeletouch.Entities
 
         // Foreign Key
         [Required]
-        public string CountryId { get; set; }
+        public int CountryId { get; set; }
 
         [Required(ErrorMessageResourceName = "validation_required_field", ErrorMessageResourceType = typeof(Resources.Resources))]
         [Display(Name = "primary_address", ResourceType = typeof(Resources.Resources))]
