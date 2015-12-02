@@ -23,11 +23,18 @@ module Myteletouch {
         class ApplicationUserShippingAddressController {
             static $inject = ['$scope', '$http', '$resource', 'ApplicationUserShippingAddressDatabaseService'];
 
-            constructor($scope, $http: ng.IHttpService, $resource, ApplicationUserShippingAddressDatabaseService: IApplicationUserShippingAddressDatabaseService) {
-                // $scope.userShippingAddress = new ApplicationUserShippingAddressFactory();
+            constructor(
+                private $scope,
+                private $http: ng.IHttpService,
+                private $resource,
+                private ApplicationUserShippingAddressDatabaseService: IApplicationUserShippingAddressDatabaseService) {
                 console.log(ApplicationUserShippingAddressDatabaseService);
 
                 this.getCountryList($scope, $http);
+            }
+
+            private initializeApplicationUserShippingAddressDatabaseService(): void {
+                this.ApplicationUserShippingAddressDatabaseService.buttonTextMessage = "Save my shipping address";    
             }
 
             /**
