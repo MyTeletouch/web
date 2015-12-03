@@ -1,4 +1,5 @@
 ﻿/// <reference path="../../../typings/angularjs/angular.d.ts" />
+/// <reference path="../../entities/formelement/state/submitbutton.ts" />
 
 module Myteletouch {
     "use strict";
@@ -7,7 +8,7 @@ module Myteletouch {
         export module Database {
             export interface IApplicationUserShippingAddressDatabaseService extends Myteletouch.Service.Database.IDatabaseService {
                 formControlStyle: string;
-                buttonTextMessage: string;
+                submitButton: Myteletouch.Entity.FormElement.SubmitButton;
             }
 
             /**
@@ -18,7 +19,7 @@ module Myteletouch {
                 static $inject = ['$resource', '$rootScope'];
 
                 private _formControlStyle: string;
-                private _buttonTextMessage: string;
+                private _submitButton: Myteletouch.Entity.FormElement.SubmitButton;
 
                 constructor(private $resource, private $rootScope) {
                     
@@ -32,12 +33,12 @@ module Myteletouch {
                     this._formControlStyle = newValue;
                 }
 
-                get buttonTextMessage(): string {
-                    return this._buttonTextMessage;
+                get submitButton(): Myteletouch.Entity.FormElement.SubmitButton {
+                    return this._submitButton;
                 }
 
-                set buttonTextMessage(newValue: string) {
-                    this._buttonTextMessage = newValue;
+                set submitButton(newValue: Myteletouch.Entity.FormElement.SubmitButton) {
+                    this._submitButton = newValue;
                 }
 
                 saveRecordToDabase() {

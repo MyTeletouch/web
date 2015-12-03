@@ -3,16 +3,18 @@
 /// <reference path="../configurations/routes.ts" />
 /// <reference path="../models/viewmodels/countryviewmodels/countrylistitem.ts" />
 /// <reference path="../services/database/applicationusershippingaddressdatabaseservice.ts" />
-
-// http://blogs.msdn.com/b/typescript/archive/2014/11/18/what-s-new-in-the-typescript-type-system.aspx
-type CountryListItem = Myteletouch.Model.ViewModel.CountryViewModel.CountryListItem;
-type IApplicationUserShippingAddressDatabaseService = Myteletouch.Service.Database.IApplicationUserShippingAddressDatabaseService;
+/// <reference path="../entities/formelement/state/submitbutton.ts" />
 
 module Myteletouch {
     "use strict";
 
     export module Controller {
-
+        
+        // http://blogs.msdn.com/b/typescript/archive/2014/11/18/what-s-new-in-the-typescript-type-system.aspx
+        type CountryListItem = Myteletouch.Model.ViewModel.CountryViewModel.CountryListItem;
+        type IApplicationUserShippingAddressDatabaseService = Myteletouch.Service.Database.IApplicationUserShippingAddressDatabaseService;
+        type Button = Myteletouch.Entity.FormElement.SubmitButton;
+        
         /**
          * @ngdoc overview
          * @name Myteletouch:controller:ApplicationUserShippingAddressController
@@ -34,7 +36,9 @@ module Myteletouch {
             }
 
             private initializeApplicationUserShippingAddressDatabaseService(): void {
-                this.ApplicationUserShippingAddressDatabaseService.buttonTextMessage = "Save my shipping address";    
+                const tempButton: Myteletouch.Entity.FormElement.SubmitButton =
+                    new Myteletouch.Entity.FormElement.SubmitButton("Please add your shipping details", "Saving", "Invalid data");
+                this.ApplicationUserShippingAddressDatabaseService.submitButton = tempButton;    
             }
 
             /**

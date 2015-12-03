@@ -260,7 +260,6 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Scripts\angular\directives\" />
-    <Folder Include="Scripts\angular\entities\" />
     <Folder Include="Scripts\angular\filters\" />
   </ItemGroup>
   <ItemGroup>
@@ -299,6 +298,8 @@
     <TypeScriptCompile Include="Scripts\angular\configurations\RouteLink.ts" />
     <TypeScriptCompile Include="Scripts\angular\controllers\ApplicationUserShippingAddressController.ts" />
     <TypeScriptCompile Include="Scripts\angular\configurations\Routes.ts" />
+    <TypeScriptCompile Include="Scripts\angular\entities\formElement\state\Button.ts" />
+    <TypeScriptCompile Include="Scripts\angular\entities\formElement\state\enums\FormState.ts" />
     <TypeScriptCompile Include="Scripts\angular\services\database\ApplicationUserShippingAddressDatabaseService.ts" />
     <TypeScriptCompile Include="Scripts\angular\models\ApplicationUserShippingAddress.ts" />
     <TypeScriptCompile Include="Scripts\angular\models\BaseModel.ts" />
