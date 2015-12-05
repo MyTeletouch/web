@@ -46,10 +46,33 @@ namespace MyTeletouch
         private static void RegisterAngularjsBundles(BundleCollection bundles)
         {
             bundles.Add(new ScriptBundle("~/bundles/application-angular").Include(
+                    // Configurations
+                    "~/Scripts/angular/configurations/RouteLink.js",
+                    "~/Scripts/angular/configurations/Routes.js",
+
+                    // App and App Routes
                     "~/Scripts/angular/app.module.js",
                     "~/Scripts/angular/app.routes.js",
+
+                    // DOM Entities
+                    "~/Scripts/angular/entities/DOM/formElements/form/FormState.js",
+                    "~/Scripts/angular/entities/DOM/formElements/form/Form.js",
+                    "~/Scripts/angular/entities/DOM/formElements/submitButton/SubmitButtonState.js",
+                    "~/Scripts/angular/entities/DOM/formElements/submitButton/SubmitButton.js",
+
+                    // Models
+                    "~/Scripts/angular/models/BaseModel.js",
+                    "~/Scripts/angular/models/applicationusershippingaddress.js",
+                    "~/Scripts/angular/models/Country.js",
+                    "~/Scripts/angular/models/CountryText.js",
+
+                    // ViewModels
+                    "~/Scripts/angular/models/viewModels/countryViewModels/CountryListItem.js",
+
                     // Database Services
+                    "~/Scripts/angular/services/database/interfaces/IDatabaseService.js",
                     "~/Scripts/angular/services/database/ApplicationUserShippingAddressDatabaseService.js",
+                    
                     // Controllers
                     "~/Scripts/angular/controllers/ApplicationUserShippingAddressController.js"));
         }

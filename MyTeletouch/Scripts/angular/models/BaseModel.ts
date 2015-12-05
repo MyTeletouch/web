@@ -3,8 +3,15 @@
 
     export module Model {
         export class BaseModel {
-            public Id: number;
-            public Name: string;
+            private _Id: number;
+
+            constructor() {
+                this._Id = null;
+            }
+
+            get Id(): number {
+                return this._Id;
+            }
         }
     }
 }

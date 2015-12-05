@@ -3,7 +3,8 @@
 /// <reference path="../configurations/routes.ts" />
 /// <reference path="../models/viewmodels/countryviewmodels/countrylistitem.ts" />
 /// <reference path="../services/database/applicationusershippingaddressdatabaseservice.ts" />
-/// <reference path="../entities/formelement/state/submitbutton.ts" />
+/// <reference path="../entities/dom/formelements/form/form.ts" />
+/// <reference path="../entities/dom/formelements/submitbutton/submitbutton.ts" />
 
 module Myteletouch {
     "use strict";
@@ -13,7 +14,8 @@ module Myteletouch {
         // http://blogs.msdn.com/b/typescript/archive/2014/11/18/what-s-new-in-the-typescript-type-system.aspx
         type CountryListItem = Myteletouch.Model.ViewModel.CountryViewModel.CountryListItem;
         type IApplicationUserShippingAddressDatabaseService = Myteletouch.Service.Database.IApplicationUserShippingAddressDatabaseService;
-        type Button = Myteletouch.Entity.FormElement.SubmitButton;
+        type Form = Myteletouch.Entity.DOM.FormElement.Form.Form;
+        type SubmitButton = Myteletouch.Entity.DOM.FormElement.SubmitButton.SubmitButton;
         
         /**
          * @ngdoc overview
@@ -30,15 +32,41 @@ module Myteletouch {
                 private $http: ng.IHttpService,
                 private $resource,
                 private ApplicationUserShippingAddressDatabaseService: IApplicationUserShippingAddressDatabaseService) {
-                console.log(ApplicationUserShippingAddressDatabaseService);
 
+                this.initializeApplicationUserShippingAddressDatabaseService($scope);
                 this.getCountryList($scope, $http);
+
+                console.log($scope);
             }
 
-            private initializeApplicationUserShippingAddressDatabaseService(): void {
-                const tempButton: Myteletouch.Entity.FormElement.SubmitButton =
-                    new Myteletouch.Entity.FormElement.SubmitButton("Please add your shipping details", "Saving", "Invalid data");
-                this.ApplicationUserShippingAddressDatabaseService.submitButton = tempButton;    
+            /**
+             * Generate information for form control and submit button.
+             * For form controll we generate classes for diffirent states.
+             * For submit button we generate labels for different states.
+             * 
+             * Finaly we generate a pointer reference between IApplicationUserShippingAddressDatabaseService and $scope.
+             * 
+             * @property $scope 
+             */
+            private initializeApplicationUserShippingAddressDatabaseService($scope): void {
+                
+                // Add information for form
+                const tempForm: Form = new Myteletouch.Entity.DOM.FormElement.Form.Form(
+                    "",
+                    "has-success",
+                    "has-error"
+                );
+                this.ApplicationUserShippingAddressDatabaseService.form = tempForm;
+                
+                // Add information for submit button
+                const tempButton: SubmitButton = new Myteletouch.Entity.DOM.FormElement.SubmitButton.SubmitButton(
+                    "Please add your shipping details",
+                    "Saving",
+                    "Invalid data"
+                );
+                this.ApplicationUserShippingAddressDatabaseService.submitButton = tempButton;
+
+                $scope.ApplicationUserShippingAddressDatabaseService = this.ApplicationUserShippingAddressDatabaseService;
             }
 
             /**
@@ -59,7 +87,7 @@ module Myteletouch {
                 }).error(function (data, status, headers, config) {
                     alert("Please try again later.");
                 });
-            } 
+            }
         }
 
         angular
