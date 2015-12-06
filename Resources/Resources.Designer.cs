@@ -97,6 +97,24 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Product internal code.
+        /// </summary>
+        public static string product_code {
+            get {
+                return ResourceManager.GetString("product_code", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Product image.
+        /// </summary>
+        public static string product_image {
+            get {
+                return ResourceManager.GetString("product_image", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Secondary Address.
         /// </summary>
         public static string secondary_address {
@@ -120,6 +138,15 @@ namespace Resources {
         public static string state_province_region {
             get {
                 return ResourceManager.GetString("state_province_region", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Unit price.
+        /// </summary>
+        public static string unit_price {
+            get {
+                return ResourceManager.GetString("unit_price", resourceCulture);
             }
         }
         

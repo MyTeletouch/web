@@ -9,15 +9,15 @@ namespace MyTeletouch.Entities
 {
     public class Product : BaseModel
     {
-        [Required, StringLength(100), Display(Name = "Name")]
-        public string Name { get; set; }
+        [Required(ErrorMessageResourceName = "validation_required_field", ErrorMessageResourceType = typeof(Resources.Resources))]
+        [Display(Name = "product_code", ResourceType = typeof(Resources.Resources))]
+        [MaxLength(128, ErrorMessageResourceName = "validation_max_field_lenght", ErrorMessageResourceType = typeof(Resources.Resources))]
+        public string InternalCode { get; set;  }
 
-        [Required, StringLength(10000), Display(Name = "Product Description"), DataType(DataType.MultilineText)]
-        public string Description { get; set; }
-
+        [Display(Name = "product_image", ResourceType = typeof(Resources.Resources))]
         public string ImagePath { get; set; }
 
-        [Display(Name = "Price")]
+        [Display(Name = "unit_price", ResourceType = typeof(Resources.Resources))]
         public double? UnitPrice { get; set; }
     }
 }

@@ -103,6 +103,14 @@
     <Compile Include="Migrations\201511151917096_CreateApplicationUserShippingAddress.Designer.cs">
       <DependentUpon>201511151917096_CreateApplicationUserShippingAddress.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201512061518149_CreateTableProduct.cs" />
+    <Compile Include="Migrations\201512061518149_CreateTableProduct.Designer.cs">
+      <DependentUpon>201512061518149_CreateTableProduct.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201512061633341_CreateProductTextTable.cs" />
+    <Compile Include="Migrations\201512061633341_CreateProductTextTable.Designer.cs">
+      <DependentUpon>201512061633341_CreateProductTextTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -136,6 +144,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201511151917096_CreateApplicationUserShippingAddress.resx">
       <DependentUpon>201511151917096_CreateApplicationUserShippingAddress.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201512061518149_CreateTableProduct.resx">
+      <DependentUpon>201512061518149_CreateTableProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201512061633341_CreateProductTextTable.resx">
+      <DependentUpon>201512061633341_CreateProductTextTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -26,11 +26,14 @@ namespace MyTeletouch.Repositories
 
             if (localEntity == null)
             {
-                this.Insert(localEntity);
+                this.Insert(entity);
             }
             else
             {
-                this.Update(localEntity);
+                this.Detach(localEntity);
+
+                entity.Id = localEntity.Id;
+                this.Update(entity);
             }
         }
     }

@@ -77,8 +77,6 @@ namespace MyTeletouch.Seeds
             englishLocales.Add(new CountryInfo("AF", "Afghanistan"));
             englishLocales.Add(new CountryInfo("AG", "Antigua and Barbuda"));
             englishLocales.Add(new CountryInfo("AI", "Anguilla"));
-            englishLocales.Add(new CountryInfo("AL", "Al"));
-            englishLocales.Add(new CountryInfo("AI", "Anguilla"));
             englishLocales.Add(new CountryInfo("AL", "Albania"));
             englishLocales.Add(new CountryInfo("AM", "Armenia"));
             englishLocales.Add(new CountryInfo("AO", "Angola"));
