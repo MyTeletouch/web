@@ -302,6 +302,7 @@
     <TypeScriptCompile Include="Scripts\angular\entities\DOM\formElements\form\FormState.ts" />
     <TypeScriptCompile Include="Scripts\angular\entities\DOM\formElements\submitButton\SubmitButton.ts" />
     <TypeScriptCompile Include="Scripts\angular\entities\DOM\formElements\submitButton\SubmitButtonState.ts" />
+    <TypeScriptCompile Include="Scripts\angular\models\ApplicationUser.ts" />
     <TypeScriptCompile Include="Scripts\angular\services\database\ApplicationUserShippingAddressDatabaseService.ts" />
     <TypeScriptCompile Include="Scripts\angular\models\ApplicationUserShippingAddress.ts" />
     <TypeScriptCompile Include="Scripts\angular\models\BaseModel.ts" />

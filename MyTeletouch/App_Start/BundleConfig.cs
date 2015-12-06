@@ -62,6 +62,7 @@ namespace MyTeletouch
 
                     // Models
                     "~/Scripts/angular/models/BaseModel.js",
+                    "~/Scripts/angular/models/ApplicationUser.js",
                     "~/Scripts/angular/models/applicationusershippingaddress.js",
                     "~/Scripts/angular/models/Country.js",
                     "~/Scripts/angular/models/CountryText.js",
