@@ -1,4 +1,6 @@
-﻿module Myteletouch {
+﻿/// <reference path="basemodel.ts" />
+
+module Myteletouch {
     "use strict";
 
     export module Model {
@@ -9,6 +11,10 @@
                 super();
 
                 this._CountryCode = null;
+            }
+
+            get Id(): number {
+                return this.Id;
             }
 
             get CountryCode(): string {

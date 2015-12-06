@@ -310,6 +310,7 @@
     <TypeScriptCompile Include="Scripts\angular\models\CountryText.ts" />
     <TypeScriptCompile Include="Scripts\angular\models\viewModels\countryViewModels\CountryListItem.ts" />
     <TypeScriptCompile Include="Scripts\angular\services\database\interfaces\IDatabaseService.ts" />
+    <TypeScriptCompile Include="Scripts\angular\types\basicTypes\ApplicationString.ts" />
     <TypeScriptCompile Include="Scripts\typings\angularjs\angular-animate.d.ts" />
     <TypeScriptCompile Include="Scripts\typings\angularjs\angular-cookies.d.ts" />
     <TypeScriptCompile Include="Scripts\typings\angularjs\angular-mocks.d.ts" />

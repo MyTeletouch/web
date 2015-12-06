@@ -46,6 +46,9 @@ namespace MyTeletouch
         private static void RegisterAngularjsBundles(BundleCollection bundles)
         {
             bundles.Add(new ScriptBundle("~/bundles/application-angular").Include(
+                    //Base Types
+                    "~/Scripts/angular/types/basicTypes/ApplicationString.js",
+
                     // Configurations
                     "~/Scripts/angular/configurations/RouteLink.js",
                     "~/Scripts/angular/configurations/Routes.js",
