@@ -17,7 +17,8 @@ namespace MyTeletouch.Migrations.Migrations
                     ProductId = c.Int(nullable: false),
                     Locale = c.String(nullable: false, maxLength: 2),
                     Name = c.String(nullable: false, maxLength: 128),
-                    Description = c.String(storeType: "ntext", nullable: true),
+                    Slogon = c.String(nullable: false, maxLength: 255),
+                    Description = c.String(nullable: true, storeType: "ntext"),
                     CreatedAt = c.DateTime(nullable: false, storeType: "datetime"),
                     UpdatedAt = c.DateTime(nullable: false, storeType: "datetime")
                 })

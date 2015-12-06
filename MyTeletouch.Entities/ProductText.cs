@@ -21,6 +21,10 @@ namespace MyTeletouch.Entities
         public string Name { get; set; }
 
         [Required]
+        [MaxLength(255, ErrorMessage = "")]
+        public string Slogon { get; set; }
+
+        [Required]
         [DataType(DataType.MultilineText)]
         [MaxLength(10000, ErrorMessage = "")]
         public string Description { get; set; }

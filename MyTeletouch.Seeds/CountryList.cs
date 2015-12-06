@@ -16,10 +16,10 @@ namespace MyTeletouch.Seeds
             public string Locale { get; set; } 
             public List<CountryInfo> Countries { get; set; }
 
-            public CountryLocaleList(string SystemLocale, List<CountryInfo> SystemCountries)
+            public CountryLocaleList(string InputLocale, List<CountryInfo> InputCountries)
             {
-                this.Locale = SystemLocale;
-                this.Countries = SystemCountries;
+                this.Locale = InputLocale;
+                this.Countries = InputCountries;
             }
         }
 
