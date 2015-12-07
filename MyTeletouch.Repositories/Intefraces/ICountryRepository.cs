@@ -14,7 +14,7 @@ namespace MyTeletouch.Repositories.Intefraces
         Country FindCountryByCountryCode(string countryCode);
 
         /// <summary>
-        /// Try insert country in database, if you country code doesn't exist.
+        /// We try to insert country in database, if you country code doesn't exist.
         /// </summary>
         /// <param name="country"></param>
         /// <returns>Give us information for country database id.</returns>

@@ -1,4 +1,5 @@
-﻿using MyTeletouch.Repositories;
+﻿using MyTeletouch.Entities;
+using MyTeletouch.Repositories;
 using MyTeletouch.Repositories.Intefraces;
 using Resources;
 using SharedStruct;
@@ -46,7 +47,24 @@ namespace MyTeletouch.Seeds
 
         private void InsertAvailableProducts(List<ProductLocaleList> availableProducts)
         {
+            ProductText productLocale;
+            foreach (ProductLocaleList productRowRecord in availableProducts)
+            {
+                // Insert for each locale product information.
+                foreach (ProductInfo productInfo in productRowRecord.Products)
+                {
+                    productLocale = new ProductText();
 
+                    // Insert product
+                    productLocale.ProductId = _dbRepository.AddProduct(productInfo);
+                    productLocale.Locale = productRowRecord.Locale;
+                    productLocale.Name = productInfo.ProductName;
+                    productLocale.Slogon = productInfo.ProductSlogon;
+                    productLocale.Description = productInfo.ProductDescription;
+
+                    _dbRepository.AddOrUpdateProductLocale(productLocale);
+                }
+            }
         }
 
         /// <summary>

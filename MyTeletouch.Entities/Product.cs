@@ -9,6 +9,17 @@ namespace MyTeletouch.Entities
 {
     public class Product : BaseModel
     {
+        public Product()
+        {
+
+        }
+
+        public Product(string ExternalInternalCode, double ExternalUnitPrice)
+        {
+            this.InternalCode = ExternalInternalCode;
+            this.UnitPrice = ExternalUnitPrice;
+        }
+
         [Required(ErrorMessageResourceName = "validation_required_field", ErrorMessageResourceType = typeof(Resources.Resources))]
         [Display(Name = "product_code", ResourceType = typeof(Resources.Resources))]
         [MaxLength(128, ErrorMessageResourceName = "validation_max_field_lenght", ErrorMessageResourceType = typeof(Resources.Resources))]

@@ -29,7 +29,7 @@ namespace MyTeletouch.Repositories
         }
 
         /// <summary>
-        /// Try insert country in database, if you country code doesn't exist.
+        /// <see cref="ICountryRepository.AddCountry(CountryInfo)"/>
         /// </summary>
         /// <param name="country"></param>
         /// <returns>Give us information for country database id.</returns>
