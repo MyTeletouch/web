@@ -14,7 +14,6 @@ namespace MyTeletouch.DBContexts
 
         public DbSet<ProductText> ProductLocales { get; set;  }
 
-        public DbSet<CartItem> ShoppingCartItems { get; set; }
         public DbSet<Order> Orders { get; set; }
         public DbSet<OrderDetail> OrderDetails { get; set; }
     }

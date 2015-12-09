@@ -163,10 +163,12 @@
   </data>
   <data name="product_image" xml:space="preserve">
     <value>Product image</value>
-    <comment></comment>
   </data>
   <data name="unit_price" xml:space="preserve">
     <value>Unit price</value>
-    <comment></comment>
+  </data>
+  <data name="record_doesnt_exist_in_our_system" xml:space="preserve">
+    <value>Record doesnt exist in our system</value>
+    <comment>Web API - Error 403</comment>
   </data>
 </root>

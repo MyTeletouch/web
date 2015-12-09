@@ -115,6 +115,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Record doesn&apos;t exist in our system.
+        /// </summary>
+        public static string record_not_exist {
+            get {
+                return ResourceManager.GetString("record_not_exist", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Secondary Address.
         /// </summary>
         public static string secondary_address {

@@ -96,6 +96,7 @@
   <ItemGroup>
     <Compile Include="ApplicationDbContext.cs" />
     <Compile Include="CountryDbContext.cs" />
+    <Compile Include="OrderDbContext.cs" />
     <Compile Include="ProductDbContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
