@@ -2,9 +2,11 @@
 /// <reference path="../../typings/angularjs/angular-route.d.ts" />
 /// <reference path="../configurations/routes.ts" />
 /// <reference path="../models/viewmodels/countryviewmodels/countrylistitem.ts" />
+/// <reference path="../models/viewmodels/productviewmodels/productviewmodelitem.ts" />
 /// <reference path="../services/database/applicationusershippingaddressdatabaseservice.ts" />
 /// <reference path="../entities/dom/formelements/form/form.ts" />
 /// <reference path="../entities/dom/formelements/submitbutton/submitbutton.ts" />
+
 
 module Myteletouch {
     "use strict";
@@ -16,6 +18,7 @@ module Myteletouch {
         type IApplicationUserShippingAddressDatabaseService = Myteletouch.Service.Database.IApplicationUserShippingAddressDatabaseService;
         type Form = Myteletouch.Entity.DOM.FormElement.Form.Form;
         type SubmitButton = Myteletouch.Entity.DOM.FormElement.SubmitButton.SubmitButton;
+        type ProductViewModelItem = Myteletouch.Model.ViewModel.ProductViewModel.ProductViewModelItem;
         
         /**
          * @ngdoc overview
@@ -35,6 +38,7 @@ module Myteletouch {
 
                 this.initializeApplicationUserShippingAddressDatabaseService($scope);
                 this.getCountryList($scope, $http);
+                this.getProductByInternalCode($scope, $http);
 
                 console.log($scope);
             }
@@ -86,6 +90,16 @@ module Myteletouch {
                     $scope.countries = data;
                 }).error(function (data, status, headers, config) {
                     alert("Please try again later.");
+                });
+            }
+
+            private getProductByInternalCode($scope, $http: ng.IHttpService): void {
+                const internalCode: string = "MyTeletouch";
+                const backendURI: string = `api/v1/en/products/byinternalcode/${internalCode}`;
+                
+                $http.get(backendURI).success(function (data: ProductViewModelItem, status, headers, config) {
+                    console.log(data);
+                }).error(function (data, status, headers, config) {
                 });
             }
         }

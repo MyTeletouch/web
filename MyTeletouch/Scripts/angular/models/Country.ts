@@ -5,7 +5,7 @@ module Myteletouch {
 
     export module Model {
         export class Country extends BaseModel  {
-            public _CountryCode: string;
+            private _CountryCode: string;
 
             constructor() {
                 super();
