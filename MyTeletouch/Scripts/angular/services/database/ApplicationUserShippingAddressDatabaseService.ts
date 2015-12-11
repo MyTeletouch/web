@@ -3,6 +3,8 @@
 /// <reference path="../../entities/dom/formelements/submitbutton/submitbutton.ts" />
 /// <reference path="../../models/applicationuser.ts" />
 /// <reference path="../../models/applicationusershippingaddress.ts" />
+/// <reference path="../../models/viewmodels/productviewmodels/producttotalcostitem.ts" />
+/// <reference path="../../models/viewmodels/productviewmodels/productviewmodelitem.ts" />
 
 module Myteletouch {
     "use strict";
@@ -12,12 +14,21 @@ module Myteletouch {
 
             type ApplicationUserShippingAddress = Myteletouch.Model.ApplicationUserShippingAddress;
             type ApplicationUser = Myteletouch.Model.ApplicationUser;
+            type ProductTotalCostItem = Myteletouch.Model.ViewModel.ProductViewModel.ProductTotalCostItem;
+            type ProductViewModelItem = Myteletouch.Model.ViewModel.ProductViewModel.ProductViewModelItem;
 
             export interface IApplicationUserShippingAddressDatabaseService extends Myteletouch.Service.Database.IDatabaseService {
                 form: Myteletouch.Entity.DOM.FormElement.Form.Form;
                 submitButton: Myteletouch.Entity.DOM.FormElement.SubmitButton.SubmitButton;
-                userShippingAddress: ApplicationUserShippingAddress;
-                user: ApplicationUser;
+
+                // View Models
+                ProductTotalCostItem: Myteletouch.Model.ViewModel.ProductViewModel.ProductTotalCostItem;
+                ProductViewModelItem: Myteletouch.Model.ViewModel.ProductViewModel.ProductViewModelItem;
+
+                // Models
+                UserShippingAddress: ApplicationUserShippingAddress;
+                User: ApplicationUser;
+                
             }
 
             /**
@@ -29,12 +40,18 @@ module Myteletouch {
 
                 private _form: Myteletouch.Entity.DOM.FormElement.Form.Form;
                 private _submitButton: Myteletouch.Entity.DOM.FormElement.SubmitButton.SubmitButton;
-                private _user: ApplicationUser;
-                private _userShippingAddress: ApplicationUserShippingAddress;
+
+                // View Models
+                private _ProductTotalCostItem: Myteletouch.Model.ViewModel.ProductViewModel.ProductTotalCostItem;
+                private _ProductViewModelItem: Myteletouch.Model.ViewModel.ProductViewModel.ProductViewModelItem;
+
+                // Models
+                private _User: ApplicationUser;
+                private _UserShippingAddress: ApplicationUserShippingAddress;
 
                 constructor(private $resource, private $rootScope) {
-                    this._userShippingAddress = new Myteletouch.Model.ApplicationUserShippingAddress();
-                    this._user = new Myteletouch.Model.ApplicationUser();
+                    this._User = new Myteletouch.Model.ApplicationUser();
+                    this._UserShippingAddress = new Myteletouch.Model.ApplicationUserShippingAddress();
                 }
 
                 get form(): Myteletouch.Entity.DOM.FormElement.Form.Form {
@@ -53,34 +70,47 @@ module Myteletouch {
                     this._submitButton = newValue;
                 }
 
-                get userShippingAddress(): Myteletouch.Model.ApplicationUserShippingAddress {
-                    return this._userShippingAddress;
+                get ProductTotalCostItem(): Myteletouch.Model.ViewModel.ProductViewModel.ProductTotalCostItem {
+                    return this._ProductTotalCostItem;
                 }
 
-                set userShippingAddress(newValue: Myteletouch.Model.ApplicationUserShippingAddress) {
-                    this._userShippingAddress = newValue;
+                get ProductViewModelItem(): Myteletouch.Model.ViewModel.ProductViewModel.ProductViewModelItem {
+                    return this._ProductViewModelItem;
+                }
+
+                set ProductViewModelItem(newValue: Myteletouch.Model.ViewModel.ProductViewModel.ProductViewModelItem) {
+                    this._ProductViewModelItem = newValue;
+                    this._ProductTotalCostItem = new Myteletouch.Model.ViewModel.ProductViewModel.ProductTotalCostItem(this.ProductViewModelItem);
+                }
+
+                get User(): Myteletouch.Model.ApplicationUser {
+                    return this._User;
+                }
+
+                set User(newValue: Myteletouch.Model.ApplicationUser) {
+                    this._User = newValue;
+                }
+
+                get UserShippingAddress(): Myteletouch.Model.ApplicationUserShippingAddress {
+                    return this._UserShippingAddress;
+                }
+
+                set UserShippingAddress(newValue: Myteletouch.Model.ApplicationUserShippingAddress) {
+                    this._UserShippingAddress = newValue;
                 } 
-
-                get user(): Myteletouch.Model.ApplicationUser {
-                    return this._user;
-                }
-
-                set user(newValue: Myteletouch.Model.ApplicationUser) {
-                    this._user = newValue;
-                }
 
                 /**
                  * Get information for ApplicationUser and ApplicationUserShippingAddress 
                  * and try to save information to database.
                  */
                 saveRecordToDabase() {
-                    console.log(this.user, this.userShippingAddress);
-                    this.user.PhoneNumber = this.userShippingAddress.PhoneNumber;
-                    const userInformationIsValid = (!this.user.requiredFieldsAreEmpty());
-                    const userShippingInformationIsValid = (!this.userShippingAddress.requiredFieldsAreEmpty());
+                    console.log(this.User, this.UserShippingAddress);
+                    this.User.PhoneNumber = this.UserShippingAddress.PhoneNumber;
+                    const userInformationIsValid = (!this.User.requiredFieldsAreEmpty());
+                    const userShippingInformationIsValid = (!this.UserShippingAddress.requiredFieldsAreEmpty());
 
                     if (userInformationIsValid && userShippingInformationIsValid) {
-
+                        console.log(this.ProductTotalCostItem);
                     } else {
                         alert("Please fill in all mandatory fields.");
                         this.form.changeToErrorState();

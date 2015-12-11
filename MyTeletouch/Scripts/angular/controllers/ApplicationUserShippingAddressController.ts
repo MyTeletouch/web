@@ -30,17 +30,28 @@ module Myteletouch {
         class ApplicationUserShippingAddressController {
             static $inject = ['$scope', '$http', '$resource', 'ApplicationUserShippingAddressDatabaseService'];
 
+            private _LocalApplicationUserShippingAddressDatabaseService: Myteletouch.Service.Database.IApplicationUserShippingAddressDatabaseService;
+
             constructor(
                 private $scope,
                 private $http: ng.IHttpService,
                 private $resource,
                 private ApplicationUserShippingAddressDatabaseService: IApplicationUserShippingAddressDatabaseService) {
 
+                // ApplicationUserShippingAddressDatabaseService
+                this._LocalApplicationUserShippingAddressDatabaseService = ApplicationUserShippingAddressDatabaseService;
                 this.initializeApplicationUserShippingAddressDatabaseService($scope);
+
                 this.getCountryList($scope, $http);
                 this.getProductByInternalCode($scope, $http);
+            }
 
-                console.log($scope);
+            get LocalApplicationUserShippingAddressDatabaseService(): Myteletouch.Service.Database.IApplicationUserShippingAddressDatabaseService {
+                return this._LocalApplicationUserShippingAddressDatabaseService;
+            }
+
+            set LocalApplicationUserShippingAddressDatabaseService(newValue: Myteletouch.Service.Database.IApplicationUserShippingAddressDatabaseService) {
+                this._LocalApplicationUserShippingAddressDatabaseService = newValue;
             }
 
             /**
@@ -60,7 +71,7 @@ module Myteletouch {
                     "has-success",
                     "has-error"
                 );
-                this.ApplicationUserShippingAddressDatabaseService.form = tempForm;
+                this.LocalApplicationUserShippingAddressDatabaseService.form = tempForm;
                 
                 // Add information for submit button
                 const tempButton: SubmitButton = new Myteletouch.Entity.DOM.FormElement.SubmitButton.SubmitButton(
@@ -68,9 +79,9 @@ module Myteletouch {
                     "Saving",
                     "Invalid data"
                 );
-                this.ApplicationUserShippingAddressDatabaseService.submitButton = tempButton;
+                this.LocalApplicationUserShippingAddressDatabaseService.submitButton = tempButton;
 
-                $scope.ApplicationUserShippingAddressDatabaseService = this.ApplicationUserShippingAddressDatabaseService;
+                $scope.LocalApplicationUserShippingAddressDatabaseService = this.LocalApplicationUserShippingAddressDatabaseService;
             }
 
             /**
@@ -97,8 +108,10 @@ module Myteletouch {
                 const internalCode: string = "MyTeletouch";
                 const backendURI: string = `api/v1/en/products/byinternalcode/${internalCode}`;
                 
-                $http.get(backendURI).success(function (data: ProductViewModelItem, status, headers, config) {
-                    console.log(data);
+                const _this = this;
+                $http.get(backendURI).success(function (productViewModelItem: ProductViewModelItem, status, headers, config) {
+                    _this.LocalApplicationUserShippingAddressDatabaseService.ProductViewModelItem = productViewModelItem;
+                    console.log(_this.LocalApplicationUserShippingAddressDatabaseService.ProductTotalCostItem.Quantity);
                 }).error(function (data, status, headers, config) {
                 });
             }

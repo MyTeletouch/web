@@ -307,6 +307,7 @@
     <TypeScriptCompile Include="Scripts\angular\models\ApplicationUser.ts" />
     <TypeScriptCompile Include="Scripts\angular\models\Product.ts" />
     <TypeScriptCompile Include="Scripts\angular\models\ProductText.ts" />
+    <TypeScriptCompile Include="Scripts\angular\models\viewModels\productViewModels\ProductTotalCostItem.ts" />
     <TypeScriptCompile Include="Scripts\angular\models\viewModels\productViewModels\ProductViewModelItem.ts" />
     <TypeScriptCompile Include="Scripts\angular\services\database\ApplicationUserShippingAddressDatabaseService.ts" />
     <TypeScriptCompile Include="Scripts\angular\models\ApplicationUserShippingAddress.ts" />
