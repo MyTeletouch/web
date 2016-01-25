@@ -302,6 +302,7 @@
     <TypeScriptCompile Include="Scripts\angular\configurations\Routes.ts" />
     <TypeScriptCompile Include="Scripts\angular\entities\DOM\formElements\form\Form.ts" />
     <TypeScriptCompile Include="Scripts\angular\entities\DOM\formElements\form\FormState.ts" />
+    <TypeScriptCompile Include="Scripts\angular\entities\DOM\formElements\selectbox\SelectOption.ts" />
     <TypeScriptCompile Include="Scripts\angular\entities\DOM\formElements\submitButton\SubmitButton.ts" />
     <TypeScriptCompile Include="Scripts\angular\entities\DOM\formElements\submitButton\SubmitButtonState.ts" />
     <TypeScriptCompile Include="Scripts\angular\models\ApplicationUser.ts" />

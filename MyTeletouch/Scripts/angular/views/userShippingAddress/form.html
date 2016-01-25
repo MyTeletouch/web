@@ -92,12 +92,9 @@
                 class="form-control"
                 ng-init="country = countries[0]"
                 ng-options="country.Name for country in (countries | filter:filterCountries) track by country.Id"
-                ng-model="country">
+                ng-model="LocalApplicationUserShippingAddressDatabaseService.Country">
             <option value="">Choose a country:</option>
         </select>
-        <input type="hidden" 
-               ng-model="LocalApplicationUserShippingAddressDatabaseService.UserShippingAddress.CountryId" 
-               value="{{ country.Id }}"/>
      </section>
     <!-- Country -->
 

@@ -58,10 +58,14 @@ namespace MyTeletouch
                     "~/Scripts/angular/app.routes.js",
 
                     // DOM Entities
+                    // Form State
                     "~/Scripts/angular/entities/DOM/formElements/form/FormState.js",
                     "~/Scripts/angular/entities/DOM/formElements/form/Form.js",
+                    // Submit Button
                     "~/Scripts/angular/entities/DOM/formElements/submitButton/SubmitButtonState.js",
                     "~/Scripts/angular/entities/DOM/formElements/submitButton/SubmitButton.js",
+                    // Select Box
+                    "~/Scripts/angular/entities/DOM/formElements/selectbox/SelectOption.js",
 
                     // Models
                     "~/Scripts/angular/models/BaseModel.js",
