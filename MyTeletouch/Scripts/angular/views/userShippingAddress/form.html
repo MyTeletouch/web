@@ -30,10 +30,13 @@
     </section>
     <!-- Product information -->
 
+    {{ LocalApplicationUserShippingAddressDatabaseService.User }}
+    {{ LocalApplicationUserShippingAddressDatabaseService.UserShippingAddress }}
     <!-- Email -->
     <section>
         <label class="control-label" for="email">Email :</label>
-        <input type="email" class="form-control" id="email" required 
+        <input type="text" class="form-control" id="email" required 
+               name="email"
                ng-model="LocalApplicationUserShippingAddressDatabaseService.User.Email"
                value="{{ LocalApplicationUserShippingAddressDatabaseService.User.Email }}"/>
     </section>
@@ -101,7 +104,7 @@
     <!-- Phone Number -->
     <section>
         <label class="control-label" for="phone_number">Phone Number</label>
-        <input type="tel" class="form-control" id="phone_number" maxlength="20" required
+        <input type="text" class="form-control" id="phone_number" maxlength="20" required
                ng-model="LocalApplicationUserShippingAddressDatabaseService.UserShippingAddress.PhoneNumber"
                value="{{ LocalApplicationUserShippingAddressDatabaseService.UserShippingAddress.PhoneNumber }}" />
     </section>

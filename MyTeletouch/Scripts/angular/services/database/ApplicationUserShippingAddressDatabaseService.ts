@@ -121,12 +121,16 @@ module Myteletouch {
                  * and try to save information to database.
                  */
                 saveRecordToDabase() {
-                    // Update Country
+                    console.log(this.Country);
+
+                    // Update Information for country
                     this.UserShippingAddress.CountryId = this.Country.Id;
 
                     console.log(this.User, this.UserShippingAddress, this.Country);
+                    
 
                     this.User.PhoneNumber = this.UserShippingAddress.PhoneNumber;
+                    // Validate user input data
                     const userInformationIsValid = (!this.User.requiredFieldsAreEmpty());
                     const userShippingInformationIsValid = (!this.UserShippingAddress.requiredFieldsAreEmpty());
 

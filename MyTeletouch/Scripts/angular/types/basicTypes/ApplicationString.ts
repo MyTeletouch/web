@@ -11,7 +11,7 @@
              * @see https://msdn.microsoft.com/en-us/library/system.string.isnullorempty(v=vs.110).aspx
              */
             static isNullOrEmpty(inputString: string): boolean {
-                if (inputString === null || inputString.length === 0) {
+                if (inputString === undefined || inputString === null || inputString.length === 0) {
                     return true;
                 } else {
                     return false;
