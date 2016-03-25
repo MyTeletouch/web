@@ -1,0 +1,29 @@
+{
+  "name": "MyTeletouch",
+  "authors": [
+    "Dimitar Danailov <dimityr.danailov@gmail.com>"
+  ],
+  "description": "Wireless Mouse, Keyboard and Joystick from your phone",
+  "main": "",
+  "moduleType": [],
+  "keywords": [
+    "MyTeletouch",
+    "Wireless",
+    "Mouse",
+    "Keyboard"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "polymer": "Polymer/polymer#^1.4.0",
+    "iron-form": "PolymerElements/iron-form#^1.0.16"
+  }
+}

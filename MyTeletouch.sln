@@ -17,6 +17,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyTeletouch.Repositories", 
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{836E9C15-D274-4853-87EE-3859165B1216}"
 	ProjectSection(SolutionItems) = preProject
+		MyTeletouch\bower.json = MyTeletouch\bower.json
 		README.md = README.md
 	EndProjectSection
 EndProject
