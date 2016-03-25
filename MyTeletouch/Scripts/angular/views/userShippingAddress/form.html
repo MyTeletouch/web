@@ -1,5 +1,5 @@
 ﻿<section>
-    
+
     <!-- Product information -->
     <section>
         <section>
@@ -13,84 +13,80 @@
                 </span>
             </span>
             <span>
-                X 
+                X
             </span>
             <input type="number" min="1" size="2"
                    ng-model="LocalApplicationUserShippingAddressDatabaseService.ProductTotalCostItem.Quantity"
                    value="{{ LocalApplicationUserShippingAddressDatabaseService.ProductTotalCostItem.Quantity }}" />
             <span>
                 <span>
-                    Total Cost: 
+                    Total Cost:
                 </span>
                 <span>
-                    {{ LocalApplicationUserShippingAddressDatabaseService.ProductTotalCostItem.totalCostFormatted() }} $ 
+                    {{ LocalApplicationUserShippingAddressDatabaseService.ProductTotalCostItem.totalCostFormatted() }} $
                 </span>
             </span>
         </section>
     </section>
     <!-- Product information -->
-
+    <!--
+    Debug
     {{ LocalApplicationUserShippingAddressDatabaseService.User }}
     {{ LocalApplicationUserShippingAddressDatabaseService.UserShippingAddress }}
+    -->
     <!-- Email -->
     <section>
         <label class="control-label" for="email">Email :</label>
-        <input type="text" class="form-control" id="email" required 
+        <input type="text" class="form-control" id="email" required
                name="email"
                ng-model="LocalApplicationUserShippingAddressDatabaseService.User.Email"
-               value="{{ LocalApplicationUserShippingAddressDatabaseService.User.Email }}"/>
+               value="{{ LocalApplicationUserShippingAddressDatabaseService.User.Email }}" />
     </section>
     <!-- Email -->
-
     <!-- Primary Address -->
     <section>
         <label class="control-label" for="primary_address">Primary Address</label>
-        <input type="text" class="form-control" id="primary_address" maxlength="128" required 
+        <input type="text" class="form-control" id="primary_address" maxlength="128" required
                ng-model="LocalApplicationUserShippingAddressDatabaseService.UserShippingAddress.PrimaryAddress"
                value="{{ LocalApplicationUserShippingAddressDatabaseService.UserShippingAddress.PrimaryAddress }}" />
     </section>
     <!-- Primary Address -->
-
     <!-- Secondary Address -->
     <section>
         <label class="control-label" for="secondary_address">Secondary Address</label>
-        <input type="text" class="form-control" id="secondary_address" maxlength="128" required 
+        <input type="text" class="form-control" id="secondary_address" maxlength="128" required
                ng-model="LocalApplicationUserShippingAddressDatabaseService.UserShippingAddress.SecondaryAddress"
-               value="{{ LocalApplicationUserShippingAddressDatabaseService.UserShippingAddress.SecondaryAddress }}"/>
+               value="{{ LocalApplicationUserShippingAddressDatabaseService.UserShippingAddress.SecondaryAddress }}" />
     </section>
     <!-- Secondary Address -->
-
     <!-- City  -->
     <section>
         <label class="control-label" for="city">City</label>
         <input type="text" class="form-control" id="city" maxlength="50" required
                ng-model="LocalApplicationUserShippingAddressDatabaseService.UserShippingAddress.City"
-               value="{{ LocalApplicationUserShippingAddressDatabaseService.UserShippingAddress.City }}"/>
+               value="{{ LocalApplicationUserShippingAddressDatabaseService.UserShippingAddress.City }}" />
     </section>
     <!-- City  -->
-
     <!-- State/Province/Region -->
     <section>
         <label class="control-label" for="state_province_region">State/Province/Region</label>
-        <input type="text" class="form-control" id="state_province_region" maxlength="80" required 
+        <input type="text" class="form-control" id="state_province_region" maxlength="80" required
                ng-model="LocalApplicationUserShippingAddressDatabaseService.UserShippingAddress.State"
-               value="{{ LocalApplicationUserShippingAddressDatabaseService.UserShippingAddress.State }}"/>
+               value="{{ LocalApplicationUserShippingAddressDatabaseService.UserShippingAddress.State }}" />
     </section>
     <!-- State/Province/Region -->
-
     <!-- ZIP / Postal Code -->
     <section>
         <label class="control-label" for="zip">ZIP / Postal Code</label>
-        <input type="text" class="form-control" id="zip" maxlength="15" required 
+        <input type="text" class="form-control" id="zip" maxlength="15" required
                ng-model="LocalApplicationUserShippingAddressDatabaseService.UserShippingAddress.ZIP"
-               value="{{ LocalApplicationUserShippingAddressDatabaseService.UserShippingAddress.ZIP }}"/>
+               value="{{ LocalApplicationUserShippingAddressDatabaseService.UserShippingAddress.ZIP }}" />
     </section>
     <!-- ZIP / Postal Code -->
-
     <!-- Country -->
     <section>
         <label class="control-label" for="country">Country: </label>
-        <input type="search" class="form-control" ng-model="filterCountries" placeholder="Filter country"/>
+        <input type="search" class="form-control" ng-model="filterCountries" placeholder="Filter country" />
         <select id="country"
                 class="form-control"
                 ng-init="country = countries[0]"
@@ -98,9 +94,8 @@
                 ng-model="LocalApplicationUserShippingAddressDatabaseService.Country">
             <option value="">Choose a country:</option>
         </select>
-     </section>
+    </section>
     <!-- Country -->
-
     <!-- Phone Number -->
     <section>
         <label class="control-label" for="phone_number">Phone Number</label>

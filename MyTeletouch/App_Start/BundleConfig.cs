@@ -52,6 +52,7 @@ namespace MyTeletouch
                     // Configurations
                     "~/Scripts/angular/configurations/RouteLink.js",
                     "~/Scripts/angular/configurations/Routes.js",
+                    "~/Scripts/angular/configurations/RoutingTable.js",
 
                     // App and App Routes
                     "~/Scripts/angular/app.module.js",

@@ -298,6 +298,7 @@
     <TypeScriptCompile Include="Scripts\angular\app.module.ts" />
     <TypeScriptCompile Include="Scripts\angular\app.routes.ts" />
     <TypeScriptCompile Include="Scripts\angular\configurations\RouteLink.ts" />
+    <TypeScriptCompile Include="Scripts\angular\configurations\RoutingTable.ts" />
     <TypeScriptCompile Include="Scripts\angular\controllers\ApplicationUserShippingAddressController.ts" />
     <TypeScriptCompile Include="Scripts\angular\configurations\Routes.ts" />
     <TypeScriptCompile Include="Scripts\angular\entities\DOM\formElements\form\Form.ts" />

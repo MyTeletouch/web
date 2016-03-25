@@ -19,7 +19,8 @@ module Myteletouch {
         type Form = Myteletouch.Entity.DOM.FormElement.Form.Form;
         type SubmitButton = Myteletouch.Entity.DOM.FormElement.SubmitButton.SubmitButton;
         type ProductViewModelItem = Myteletouch.Model.ViewModel.ProductViewModel.ProductViewModelItem;
-        
+        type RoutingTable = Myteletouch.Configurations.RoutingTable;
+
         /**
          * @ngdoc overview
          * @name Myteletouch:controller:ApplicationUserShippingAddressController
@@ -36,7 +37,10 @@ module Myteletouch {
                 private $scope,
                 private $http: ng.IHttpService,
                 private $resource,
-                private ApplicationUserShippingAddressDatabaseService: IApplicationUserShippingAddressDatabaseService) {
+                private ApplicationUserShippingAddressDatabaseService: IApplicationUserShippingAddressDatabaseService,
+                private locale: string) {
+
+                this.locale = 'en';
 
                 // ApplicationUserShippingAddressDatabaseService
                 this._LocalApplicationUserShippingAddressDatabaseService = ApplicationUserShippingAddressDatabaseService;
@@ -94,7 +98,7 @@ module Myteletouch {
              * @property $http service is a core Angular service that facilitates communication with the remote HTTP servers via the browser's XMLHttpRequest object or via JSONP.  
              */
             private getCountryList($scope, $http: ng.IHttpService): void {
-                const countryListBackendURI: string = 'api/v1/en/countries/countrylist';
+                const countryListBackendURI: string = Myteletouch.Configurations.RoutingTable.countryList(this.locale);
 
                 $scope.countries = new Array<CountryListItem>();
                 $http.get(countryListBackendURI).success(function (data: Array<CountryListItem>, status, headers, config) {
@@ -104,15 +108,26 @@ module Myteletouch {
                 });
             }
 
+            /**
+             * @ngdoc function
+             * @name Myteletouch:controller:ApplicationUserShippingAddressController
+             * @method
+             * @description
+             * Angularjs send request to backend and if you everything is correct, application should to receive product information
+             * @property $http service is a core Angular service that facilitates communication with the remote HTTP servers via the browser's XMLHttpRequest object or via JSONP.  
+             */
             private getProductByInternalCode($scope, $http: ng.IHttpService): void {
                 const internalCode: string = "MyTeletouch";
-                const backendURI: string = `api/v1/en/products/byinternalcode/${internalCode}`;
+                const backendURI: string =
+                    Myteletouch.Configurations.RoutingTable.productInfoByInternalCode(internalCode, this.locale);
+                console.log(backendURI);
                 
                 const _this = this;
                 $http.get(backendURI).success(function (productViewModelItem: ProductViewModelItem, status, headers, config) {
                     _this.LocalApplicationUserShippingAddressDatabaseService.ProductViewModelItem = productViewModelItem;
                     console.log(_this.LocalApplicationUserShippingAddressDatabaseService.ProductTotalCostItem.Quantity);
                 }).error(function (data, status, headers, config) {
+                    alert("Product is unreachable");
                 });
             }
         }
