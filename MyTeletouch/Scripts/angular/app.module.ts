@@ -4,5 +4,5 @@
 module Myteletouch {
     "use strict";	
 
-    angular.module('Myteletouch', ['ngResource', 'ngRoute']);
+    angular.module('Myteletouch', ['ngResource', 'ngRoute', 'ngMaterial']);
 }

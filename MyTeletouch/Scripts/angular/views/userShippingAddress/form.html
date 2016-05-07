@@ -1,9 +1,32 @@
 ﻿<section>
 
+    <md-input-container class="md-icon-float md-icon-right md-block">
+        <label>Product: {{ LocalApplicationUserShippingAddressDatabaseService.ProductViewModelItem.Name }}</label>
+        <md-icon md-font-set="material-icons">card_giftcard</md-icon>
+        <input type="number" min="1" size="2"
+               ng-model="LocalApplicationUserShippingAddressDatabaseService.ProductTotalCostItem.Quantity"
+               value="{{ LocalApplicationUserShippingAddressDatabaseService.ProductTotalCostItem.Quantity }}" />
+
+        <md-icon md-font-set="material-icons">shopping_cart</md-icon>
+        <section>
+            <span>
+                <span>
+                    Total Cost:
+                </span>
+                <span>
+                    {{ LocalApplicationUserShippingAddressDatabaseService.ProductTotalCostItem.totalCostFormatted() }}
+                </span>
+            </span>
+        </section>
+
+
+    </md-input-container>
+
     <!-- Product information -->
+    <!--
     <section>
         <section>
-            Product Name: {{ LocalApplicationUserShippingAddressDatabaseService.ProductViewModelItem.Name }}
+            <label>Product: {{ LocalApplicationUserShippingAddressDatabaseService.ProductViewModelItem.Name }}</label>
         </section>
         <section>
             <span>
@@ -27,64 +50,111 @@
                 </span>
             </span>
         </section>
-    </section>
+    </section>-->
     <!-- Product information -->
+
     <!--
     Debug
     {{ LocalApplicationUserShippingAddressDatabaseService.User }}
     {{ LocalApplicationUserShippingAddressDatabaseService.UserShippingAddress }}
     -->
     <!-- Email -->
-    <section>
-        <label class="control-label" for="email">Email :</label>
-        <input type="text" class="form-control" id="email" required
+    <md-input-container class="md-block">
+        <md-icon md-font-set="material-icons"> email </md-icon>
+
+        <input type="email"
+               id="email"
                name="email"
+               required
+               ng-required="true"
+               placeholder="Email (required)"
                ng-model="LocalApplicationUserShippingAddressDatabaseService.User.Email"
                value="{{ LocalApplicationUserShippingAddressDatabaseService.User.Email }}" />
-    </section>
+    </md-input-container>
     <!-- Email -->
     <!-- Primary Address -->
-    <section>
-        <label class="control-label" for="primary_address">Primary Address</label>
-        <input type="text" class="form-control" id="primary_address" maxlength="128" required
+    <md-input-container class="md-block">
+        <md-icon md-font-set="material-icons"> place </md-icon>
+        <input type="text"
+               id="primary_address"
+               maxlength="128"
+               required
+               ng-required="true"
+               placeholder="Primary Address (required)"
                ng-model="LocalApplicationUserShippingAddressDatabaseService.UserShippingAddress.PrimaryAddress"
                value="{{ LocalApplicationUserShippingAddressDatabaseService.UserShippingAddress.PrimaryAddress }}" />
-    </section>
+    </md-input-container>
     <!-- Primary Address -->
     <!-- Secondary Address -->
-    <section>
-        <label class="control-label" for="secondary_address">Secondary Address</label>
-        <input type="text" class="form-control" id="secondary_address" maxlength="128" required
+    <md-input-container class="md-block">
+        <md-icon md-font-set="material-icons"> place </md-icon>
+        <input type="text"
+               id="secondary_address"
+               maxlength="128"
+               ng-required="false"
+               placeholder="Secondary Address (Optional)"
                ng-model="LocalApplicationUserShippingAddressDatabaseService.UserShippingAddress.SecondaryAddress"
                value="{{ LocalApplicationUserShippingAddressDatabaseService.UserShippingAddress.SecondaryAddress }}" />
-    </section>
+    </md-input-container>
     <!-- Secondary Address -->
     <!-- City  -->
-    <section>
-        <label class="control-label" for="city">City</label>
-        <input type="text" class="form-control" id="city" maxlength="50" required
+    <md-input-container class="md-block">
+        <md-icon md-font-set="material-icons"> place </md-icon>
+        <input type="text"
+               id="city"
+               maxlength="50"
+               required
+               ng-required="false"
+               placeholder="City (required)"
                ng-model="LocalApplicationUserShippingAddressDatabaseService.UserShippingAddress.City"
                value="{{ LocalApplicationUserShippingAddressDatabaseService.UserShippingAddress.City }}" />
-    </section>
+    </md-input-container>
     <!-- City  -->
     <!-- State/Province/Region -->
-    <section>
-        <label class="control-label" for="state_province_region">State/Province/Region</label>
-        <input type="text" class="form-control" id="state_province_region" maxlength="80" required
+    <md-input-container class="md-block">
+        <md-icon md-font-set="material-icons"> place </md-icon>
+        <input type="text"
+               class="form-control"
+               id="state_province_region"
+               maxlength="80"
+               required
+               ng-required="true"
+               placeholder="State/Province/Region (required)"
                ng-model="LocalApplicationUserShippingAddressDatabaseService.UserShippingAddress.State"
                value="{{ LocalApplicationUserShippingAddressDatabaseService.UserShippingAddress.State }}" />
-    </section>
+    </md-input-container>
     <!-- State/Province/Region -->
     <!-- ZIP / Postal Code -->
-    <section>
-        <label class="control-label" for="zip">ZIP / Postal Code</label>
-        <input type="text" class="form-control" id="zip" maxlength="15" required
+    <md-input-container class="md-block">
+        <md-icon md-font-set="material-icons"> place </md-icon>
+        <input type="text"
+               class="form-control"
+               id="zip"
+               maxlength="15"
+               required
+               ng-required="true"
+               placeholder="ZIP / Postal Code (required)"
                ng-model="LocalApplicationUserShippingAddressDatabaseService.UserShippingAddress.ZIP"
                value="{{ LocalApplicationUserShippingAddressDatabaseService.UserShippingAddress.ZIP }}" />
-    </section>
+    </md-input-container>
     <!-- ZIP / Postal Code -->
+
     <!-- Country -->
-    <section>
+    <md-input-container class="md-block" style="width: 100%;">
+        <md-input-container>
+            <label>Country (Required)</label>
+            <md-icon md-font-set="material-icons"> place </md-icon>
+            <md-select ng-model="LocalApplicationUserShippingAddressDatabaseService.Country">
+                <md-option ng-repeat="country in countries track by country.Id">
+                    {{country.Name}}
+                </md-option>
+            </md-select>
+        </md-input-container>
+    </md-input-container>
+    <!-- Country -->
+
+    <!-- Country -->
+    <md-input-container class="md-block">
         <label class="control-label" for="country">Country: </label>
         <input type="search" class="form-control" ng-model="filterCountries" placeholder="Filter country" />
         <select id="country"
@@ -94,19 +164,22 @@
                 ng-model="LocalApplicationUserShippingAddressDatabaseService.Country">
             <option value="">Choose a country:</option>
         </select>
-    </section>
+    </md-input-container>
     <!-- Country -->
     <!-- Phone Number -->
-    <section>
-        <label class="control-label" for="phone_number">Phone Number</label>
-        <input type="text" class="form-control" id="phone_number" maxlength="20" required
+    <md-input-container class="md-block">
+        <md-icon md-font-set="material-icons"> local_phone </md-icon>
+        <input type="text"
+               id="phone_number"
+               maxlength="20"
+               required
+               ng-required="true"
+               placeholder="Phone Number (required)"
                ng-model="LocalApplicationUserShippingAddressDatabaseService.UserShippingAddress.PhoneNumber"
                value="{{ LocalApplicationUserShippingAddressDatabaseService.UserShippingAddress.PhoneNumber }}" />
-    </section>
+    </md-input-container>
     <!-- Phone Number -->
 
-    <button ng-click="LocalApplicationUserShippingAddressDatabaseService.saveRecordToDabase()"
-            class="standart-form-button icon-save button-type-light-silver">
-        {{ LocalApplicationUserShippingAddressDatabaseService.submitButton.label }}
-    </button>
+    <md-button ng-click="LocalApplicationUserShippingAddressDatabaseService.saveRecordToDabase()"
+               class="md-raised md-primary">{{ LocalApplicationUserShippingAddressDatabaseService.submitButton.label }}</md-button>
 </section>

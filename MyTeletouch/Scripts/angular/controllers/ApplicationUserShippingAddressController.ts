@@ -100,7 +100,13 @@ module Myteletouch {
             private getCountryList($scope, $http: ng.IHttpService): void {
                 const countryListBackendURI: string = Myteletouch.Configurations.RoutingTable.countryList(this.locale);
 
+                /**
+                 * Countries list
+                 * @see https://material.angularjs.org/latest/demo/select
+                 */
                 $scope.countries = new Array<CountryListItem>();
+                $scope.country = new Myteletouch.Model.ViewModel.CountryViewModel.CountryListItem();
+
                 $http.get(countryListBackendURI).success(function (data: Array<CountryListItem>, status, headers, config) {
                     $scope.countries = data;
                 }).error(function (data, status, headers, config) {
