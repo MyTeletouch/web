@@ -293,6 +293,10 @@
       <Project>{b716977d-f5db-4043-9113-7c60ef972c1d}</Project>
       <Name>SharedStruct</Name>
     </ProjectReference>
+    <ProjectReference Include="..\ViewHelpers\ViewHelpers.csproj">
+      <Project>{ac945c12-dd32-47f2-a06e-cce70a0879cf}</Project>
+      <Name>ViewHelpers</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="Scripts\angular\app.module.ts" />
