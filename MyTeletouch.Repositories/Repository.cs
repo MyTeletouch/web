@@ -68,14 +68,21 @@ namespace MyTeletouch.Repositories
 
         public virtual void Insert(TEntity entity)
         {
-            dbSet.Add(entity);
-            this.Context.SaveChanges();
+            if (entity != null)
+            {
+                dbSet.Add(entity);
+                this.Context.SaveChanges();
+            }
         }
 
         public virtual void Update(TEntity entityToUpdate)
         {
-            dbSet.Attach(entityToUpdate);
-            Context.Entry(entityToUpdate).State = EntityState.Modified;
+            if (entityToUpdate != null)
+            {
+                dbSet.Attach(entityToUpdate);
+                Context.Entry(entityToUpdate).State = EntityState.Modified;
+                this.Context.SaveChanges();
+            }
         }
 
         public virtual void Delete(object id)

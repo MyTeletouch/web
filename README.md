@@ -38,6 +38,11 @@ Our need to have `Security/AppSettingsSecrets.config`.
 enable-migrations -ContextProjectName MyTeletouch.DBContexts -contexttypename MyTeletouch.DBContexts.ApplicationDbContext -Verbose
 ```
 
+```bash
+# Rollback all migrations
+update-database -target:0
+```
+
 ### Sources:
   1. [Code First Migrations and Deployment with the Entity Framework in an ASP.NET MVC Application](http://www.asp.net/mvc/overview/getting-started/getting-started-with-ef-using-mvc/migrations-and-deployment-with-the-entity-framework-in-an-asp-net-mvc-application)
   1. [Enable Migrations with Context in Separate Assembly?](https://stackoverflow.com/questions/18126711/enable-migrations-with-context-in-separate-assembly/18128768#18128768)

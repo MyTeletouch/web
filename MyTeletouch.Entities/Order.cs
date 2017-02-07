@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace MyTeletouch.Entities
 {
-    public class Order
+    public class Order : BaseModel
     {
         // Foreign Key
         [Required]
@@ -20,9 +20,6 @@ namespace MyTeletouch.Entities
         [DisplayFormat(DataFormatString = DateSettings.StandartDateFormat, ApplyFormatInEditMode = true)]
         public DateTime OrderDate { get; set; }
 
-        [ForeignKey("UserId")]
-        public virtual ApplicationUser User { get; set; }
-
         [ScaffoldColumn(false)]
         public decimal Total { get; set; }
 
@@ -31,6 +28,9 @@ namespace MyTeletouch.Entities
 
         [ScaffoldColumn(false)]
         public bool HasBeenShipped { get; set; }
+
+        [ForeignKey("UserId")]
+        public virtual ApplicationUser User { get; set; }
 
         public List<OrderDetail> OrderDetails { get; set; }
     }

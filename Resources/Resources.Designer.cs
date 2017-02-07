@@ -97,6 +97,33 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Product internal code.
+        /// </summary>
+        public static string product_code {
+            get {
+                return ResourceManager.GetString("product_code", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Product image.
+        /// </summary>
+        public static string product_image {
+            get {
+                return ResourceManager.GetString("product_image", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Record doesn&apos;t exist in our system.
+        /// </summary>
+        public static string record_not_exist {
+            get {
+                return ResourceManager.GetString("record_not_exist", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Secondary Address.
         /// </summary>
         public static string secondary_address {
@@ -124,6 +151,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Unit price.
+        /// </summary>
+        public static string unit_price {
+            get {
+                return ResourceManager.GetString("unit_price", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to {0} should be {1} characters or less..
         /// </summary>
         public static string validation_max_field_lenght {
@@ -142,7 +178,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to zip.
+        ///   Looks up a localized string similar to ZIP / Postal Code.
         /// </summary>
         public static string zip {
             get {

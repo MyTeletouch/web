@@ -19,12 +19,16 @@ namespace MyTeletouch.Migrations.Migrations
             // Enable debugging for migrations
             if (System.Diagnostics.Debugger.IsAttached == false)
             {
-                System.Diagnostics.Debugger.Launch();
+                // System.Diagnostics.Debugger.Launch();
             }
                 
             // Migrate countries
             var countryList = new CountryList();
             countryList.InsertCountries();
+
+            // Migrate products
+            var productList = new ProductList();
+            productList.InsertProducts();
         }
     }
 }

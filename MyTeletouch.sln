@@ -17,6 +17,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyTeletouch.Repositories", 
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{836E9C15-D274-4853-87EE-3859165B1216}"
 	ProjectSection(SolutionItems) = preProject
+		MyTeletouch\bower.json = MyTeletouch\bower.json
 		README.md = README.md
 	EndProjectSection
 EndProject
@@ -34,6 +35,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyTeletouch.Migrations", "MyTeletouch.Migrations\MyTeletouch.Migrations.csproj", "{B72B9E7A-CDD0-4017-8524-9E6FA6A13D51}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RouteConfigEntities", "RouteConfigEntities\RouteConfigEntities.csproj", "{33D63918-BC89-4663-9A89-3FDAE72E799C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ViewHelpers", "ViewHelpers\ViewHelpers.csproj", "{AC945C12-DD32-47F2-A06E-CCE70A0879CF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -85,6 +88,10 @@ Global
 		{33D63918-BC89-4663-9A89-3FDAE72E799C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{33D63918-BC89-4663-9A89-3FDAE72E799C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{33D63918-BC89-4663-9A89-3FDAE72E799C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AC945C12-DD32-47F2-A06E-CCE70A0879CF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AC945C12-DD32-47F2-A06E-CCE70A0879CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AC945C12-DD32-47F2-A06E-CCE70A0879CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AC945C12-DD32-47F2-A06E-CCE70A0879CF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

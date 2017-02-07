@@ -102,8 +102,11 @@
     <Compile Include="Order.cs" />
     <Compile Include="OrderDetail.cs" />
     <Compile Include="Product.cs" />
+    <Compile Include="ProductText.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ApplicationUserShippingAddress.cs" />
+    <Compile Include="ViewModels\CountryViewModel\CountryListItem.cs" />
+    <Compile Include="ViewModels\ProductViewModel\ProductViewModelItem.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ClientConfigurations\ClientConfigurations.csproj">
@@ -115,6 +118,7 @@
       <Name>Resources</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

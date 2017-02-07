@@ -16,10 +16,10 @@ namespace MyTeletouch.Seeds
             public string Locale { get; set; } 
             public List<CountryInfo> Countries { get; set; }
 
-            public CountryLocaleList(string SystemLocale, List<CountryInfo> SystemCountries)
+            public CountryLocaleList(string InputLocale, List<CountryInfo> InputCountries)
             {
-                this.Locale = SystemLocale;
-                this.Countries = SystemCountries;
+                this.Locale = InputLocale;
+                this.Countries = InputCountries;
             }
         }
 
@@ -76,8 +76,6 @@ namespace MyTeletouch.Seeds
             englishLocales.Add(new CountryInfo("AE", "United Arab Emirates"));
             englishLocales.Add(new CountryInfo("AF", "Afghanistan"));
             englishLocales.Add(new CountryInfo("AG", "Antigua and Barbuda"));
-            englishLocales.Add(new CountryInfo("AI", "Anguilla"));
-            englishLocales.Add(new CountryInfo("AL", "Al"));
             englishLocales.Add(new CountryInfo("AI", "Anguilla"));
             englishLocales.Add(new CountryInfo("AL", "Albania"));
             englishLocales.Add(new CountryInfo("AM", "Armenia"));

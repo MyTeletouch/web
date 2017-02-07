@@ -142,7 +142,7 @@
     <comment>Shipping Address</comment>
   </data>
   <data name="zip" xml:space="preserve">
-    <value>zip</value>
+    <value>ZIP / Postal Code</value>
     <comment>Shipping Address</comment>
   </data>
   <data name="country" xml:space="preserve">
@@ -156,5 +156,19 @@
   <data name="ship_to_this_address" xml:space="preserve">
     <value>Ship to this adddress</value>
     <comment>Shipping Address</comment>
+  </data>
+  <data name="product_code" xml:space="preserve">
+    <value>Product internal code</value>
+    <comment>Shopping basket</comment>
+  </data>
+  <data name="product_image" xml:space="preserve">
+    <value>Product image</value>
+  </data>
+  <data name="unit_price" xml:space="preserve">
+    <value>Unit price</value>
+  </data>
+  <data name="record_doesnt_exist_in_our_system" xml:space="preserve">
+    <value>Record doesnt exist in our system</value>
+    <comment>Web API - Error 403</comment>
   </data>
 </root>

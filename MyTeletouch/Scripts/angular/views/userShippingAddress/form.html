@@ -1,0 +1,185 @@
+﻿<section>
+
+    <md-input-container class="md-icon-float md-icon-right md-block">
+        <label>Product: {{ LocalApplicationUserShippingAddressDatabaseService.ProductViewModelItem.Name }}</label>
+        <md-icon md-font-set="material-icons">card_giftcard</md-icon>
+        <input type="number" min="1" size="2"
+               ng-model="LocalApplicationUserShippingAddressDatabaseService.ProductTotalCostItem.Quantity"
+               value="{{ LocalApplicationUserShippingAddressDatabaseService.ProductTotalCostItem.Quantity }}" />
+
+        <md-icon md-font-set="material-icons">shopping_cart</md-icon>
+        <section>
+            <span>
+                <span>
+                    Total Cost:
+                </span>
+                <span>
+                    {{ LocalApplicationUserShippingAddressDatabaseService.ProductTotalCostItem.totalCostFormatted() }}
+                </span>
+            </span>
+        </section>
+
+
+    </md-input-container>
+
+    <!-- Product information -->
+    <!--
+    <section>
+        <section>
+            <label>Product: {{ LocalApplicationUserShippingAddressDatabaseService.ProductViewModelItem.Name }}</label>
+        </section>
+        <section>
+            <span>
+                <span>Unit price:</span>
+                <span>
+                    {{ LocalApplicationUserShippingAddressDatabaseService.ProductViewModelItem.UnitPrice }} $
+                </span>
+            </span>
+            <span>
+                X
+            </span>
+            <input type="number" min="1" size="2"
+                   ng-model="LocalApplicationUserShippingAddressDatabaseService.ProductTotalCostItem.Quantity"
+                   value="{{ LocalApplicationUserShippingAddressDatabaseService.ProductTotalCostItem.Quantity }}" />
+            <span>
+                <span>
+                    Total Cost:
+                </span>
+                <span>
+                    {{ LocalApplicationUserShippingAddressDatabaseService.ProductTotalCostItem.totalCostFormatted() }} $
+                </span>
+            </span>
+        </section>
+    </section>-->
+    <!-- Product information -->
+
+    <!--
+    Debug
+    {{ LocalApplicationUserShippingAddressDatabaseService.User }}
+    {{ LocalApplicationUserShippingAddressDatabaseService.UserShippingAddress }}
+    -->
+    <!-- Email -->
+    <md-input-container class="md-block">
+        <md-icon md-font-set="material-icons"> email </md-icon>
+
+        <input type="email"
+               id="email"
+               name="email"
+               required
+               ng-required="true"
+               placeholder="Email (required)"
+               ng-model="LocalApplicationUserShippingAddressDatabaseService.User.Email"
+               value="{{ LocalApplicationUserShippingAddressDatabaseService.User.Email }}" />
+    </md-input-container>
+    <!-- Email -->
+    <!-- Primary Address -->
+    <md-input-container class="md-block">
+        <md-icon md-font-set="material-icons"> place </md-icon>
+        <input type="text"
+               id="primary_address"
+               maxlength="128"
+               required
+               ng-required="true"
+               placeholder="Primary Address (required)"
+               ng-model="LocalApplicationUserShippingAddressDatabaseService.UserShippingAddress.PrimaryAddress"
+               value="{{ LocalApplicationUserShippingAddressDatabaseService.UserShippingAddress.PrimaryAddress }}" />
+    </md-input-container>
+    <!-- Primary Address -->
+    <!-- Secondary Address -->
+    <md-input-container class="md-block">
+        <md-icon md-font-set="material-icons"> place </md-icon>
+        <input type="text"
+               id="secondary_address"
+               maxlength="128"
+               ng-required="false"
+               placeholder="Secondary Address (Optional)"
+               ng-model="LocalApplicationUserShippingAddressDatabaseService.UserShippingAddress.SecondaryAddress"
+               value="{{ LocalApplicationUserShippingAddressDatabaseService.UserShippingAddress.SecondaryAddress }}" />
+    </md-input-container>
+    <!-- Secondary Address -->
+    <!-- City  -->
+    <md-input-container class="md-block">
+        <md-icon md-font-set="material-icons"> place </md-icon>
+        <input type="text"
+               id="city"
+               maxlength="50"
+               required
+               ng-required="false"
+               placeholder="City (required)"
+               ng-model="LocalApplicationUserShippingAddressDatabaseService.UserShippingAddress.City"
+               value="{{ LocalApplicationUserShippingAddressDatabaseService.UserShippingAddress.City }}" />
+    </md-input-container>
+    <!-- City  -->
+    <!-- State/Province/Region -->
+    <md-input-container class="md-block">
+        <md-icon md-font-set="material-icons"> place </md-icon>
+        <input type="text"
+               class="form-control"
+               id="state_province_region"
+               maxlength="80"
+               required
+               ng-required="true"
+               placeholder="State/Province/Region (required)"
+               ng-model="LocalApplicationUserShippingAddressDatabaseService.UserShippingAddress.State"
+               value="{{ LocalApplicationUserShippingAddressDatabaseService.UserShippingAddress.State }}" />
+    </md-input-container>
+    <!-- State/Province/Region -->
+    <!-- ZIP / Postal Code -->
+    <md-input-container class="md-block">
+        <md-icon md-font-set="material-icons"> place </md-icon>
+        <input type="text"
+               class="form-control"
+               id="zip"
+               maxlength="15"
+               required
+               ng-required="true"
+               placeholder="ZIP / Postal Code (required)"
+               ng-model="LocalApplicationUserShippingAddressDatabaseService.UserShippingAddress.ZIP"
+               value="{{ LocalApplicationUserShippingAddressDatabaseService.UserShippingAddress.ZIP }}" />
+    </md-input-container>
+    <!-- ZIP / Postal Code -->
+
+    <!-- Country -->
+    <md-input-container class="md-block" style="width: 100%;">
+        <md-input-container>
+            <label>Country (Required)</label>
+            <md-icon md-font-set="material-icons"> place </md-icon>
+            <md-select ng-model="LocalApplicationUserShippingAddressDatabaseService.Country">
+                <md-option ng-repeat="country in countries track by country.Id">
+                    {{country.Name}}
+                </md-option>
+            </md-select>
+        </md-input-container>
+    </md-input-container>
+    <!-- Country -->
+
+    <!-- Country -->
+    <md-input-container class="md-block">
+        <label class="control-label" for="country">Country: </label>
+        <input type="search" class="form-control" ng-model="filterCountries" placeholder="Filter country" />
+        <select id="country"
+                class="form-control"
+                ng-init="country = countries[0]"
+                ng-options="country.Name for country in (countries | filter:filterCountries) track by country.Id"
+                ng-model="LocalApplicationUserShippingAddressDatabaseService.Country">
+            <option value="">Choose a country:</option>
+        </select>
+    </md-input-container>
+    <!-- Country -->
+    <!-- Phone Number -->
+    <md-input-container class="md-block">
+        <md-icon md-font-set="material-icons"> local_phone </md-icon>
+        <input type="text"
+               id="phone_number"
+               maxlength="20"
+               required
+               ng-required="true"
+               placeholder="Phone Number (required)"
+               ng-model="LocalApplicationUserShippingAddressDatabaseService.UserShippingAddress.PhoneNumber"
+               value="{{ LocalApplicationUserShippingAddressDatabaseService.UserShippingAddress.PhoneNumber }}" />
+    </md-input-container>
+    <!-- Phone Number -->
+
+    <md-button ng-click="LocalApplicationUserShippingAddressDatabaseService.saveRecordToDabase()"
+               class="md-raised md-primary">{{ LocalApplicationUserShippingAddressDatabaseService.submitButton.label }}</md-button>
+</section>

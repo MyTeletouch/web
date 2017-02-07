@@ -213,3 +213,13 @@ ModelManifest.xml
 
 # Security
 Security/
+
+# Typings
+MyTeletouch/Scripts/typings
+
+# Javascript files
+MyTeletouch/Scripts/typings/*.js
+MyTeletouch/Scripts/typings/*.js.map
+
+# Bower modules.
+/MyTeletouch/bower_components

@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props')" />
   <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
   <Import Project="..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
@@ -25,6 +26,7 @@
     <UseGlobalApplicationHostFile />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <TypeScriptToolsVersion>1.6</TypeScriptToolsVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -179,9 +181,13 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AngularLoaderController.cs" />
+    <Compile Include="Controllers\ApplicationWebAPIController.cs" />
     <Compile Include="Controllers\BaseController.cs" />
+    <Compile Include="Controllers\CountryWebAPIController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\OrderWebAPIController.cs" />
+    <Compile Include="Controllers\ProductWebAPIController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -192,7 +198,6 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="AngularTemplates\home.html" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="favicon.ico" />
@@ -202,7 +207,7 @@
     <Content Include="Scripts\angular-mocks.js" />
     <Content Include="Scripts\angular.js" />
     <Content Include="Scripts\angular.min.js" />
-    <Content Include="Scripts\angular\application.js" />
+    <Content Include="Scripts\angular\views\userShippingAddress\form.html" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\angular.min.js.map" />
@@ -256,6 +261,8 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Scripts\angular\directives\" />
+    <Folder Include="Scripts\angular\filters\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -266,6 +273,14 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\MyTeletouch.Entities\MyTeletouch.Entities.csproj">
+      <Project>{72a25398-e8ac-416b-ac65-58b3998fe533}</Project>
+      <Name>MyTeletouch.Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MyTeletouch.Repositories\MyTeletouch.Repositories.csproj">
+      <Project>{c8dd0b34-547d-4472-a53c-ed08112536fd}</Project>
+      <Name>MyTeletouch.Repositories</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Resources\Resources.csproj">
       <Project>{545098dc-8244-4448-ad5a-d51df3256270}</Project>
       <Name>Resources</Name>
@@ -274,12 +289,75 @@
       <Project>{33d63918-bc89-4663-9a89-3fdae72e799c}</Project>
       <Name>RouteConfigEntities</Name>
     </ProjectReference>
+    <ProjectReference Include="..\SharedStruct\SharedStruct.csproj">
+      <Project>{b716977d-f5db-4043-9113-7c60ef972c1d}</Project>
+      <Name>SharedStruct</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ViewHelpers\ViewHelpers.csproj">
+      <Project>{ac945c12-dd32-47f2-a06e-cce70a0879cf}</Project>
+      <Name>ViewHelpers</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <TypeScriptCompile Include="Scripts\angular\app.module.ts" />
+    <TypeScriptCompile Include="Scripts\angular\app.routes.ts" />
+    <TypeScriptCompile Include="Scripts\angular\configurations\RouteLink.ts" />
+    <TypeScriptCompile Include="Scripts\angular\configurations\RoutingTable.ts" />
+    <TypeScriptCompile Include="Scripts\angular\controllers\ApplicationUserShippingAddressController.ts" />
+    <TypeScriptCompile Include="Scripts\angular\configurations\Routes.ts" />
+    <TypeScriptCompile Include="Scripts\angular\entities\DOM\formElements\form\Form.ts" />
+    <TypeScriptCompile Include="Scripts\angular\entities\DOM\formElements\form\FormState.ts" />
+    <TypeScriptCompile Include="Scripts\angular\entities\DOM\formElements\selectbox\SelectOption.ts" />
+    <TypeScriptCompile Include="Scripts\angular\entities\DOM\formElements\submitButton\SubmitButton.ts" />
+    <TypeScriptCompile Include="Scripts\angular\entities\DOM\formElements\submitButton\SubmitButtonState.ts" />
+    <TypeScriptCompile Include="Scripts\angular\models\ApplicationUser.ts" />
+    <TypeScriptCompile Include="Scripts\angular\models\Product.ts" />
+    <TypeScriptCompile Include="Scripts\angular\models\ProductText.ts" />
+    <TypeScriptCompile Include="Scripts\angular\models\viewModels\productViewModels\ProductTotalCostItem.ts" />
+    <TypeScriptCompile Include="Scripts\angular\models\viewModels\productViewModels\ProductViewModelItem.ts" />
+    <TypeScriptCompile Include="Scripts\angular\services\database\ApplicationUserShippingAddressDatabaseService.ts" />
+    <TypeScriptCompile Include="Scripts\angular\models\ApplicationUserShippingAddress.ts" />
+    <TypeScriptCompile Include="Scripts\angular\models\BaseModel.ts" />
+    <TypeScriptCompile Include="Scripts\angular\models\Country.ts" />
+    <TypeScriptCompile Include="Scripts\angular\models\CountryText.ts" />
+    <TypeScriptCompile Include="Scripts\angular\models\viewModels\countryViewModels\CountryListItem.ts" />
+    <TypeScriptCompile Include="Scripts\angular\services\database\interfaces\IDatabaseService.ts" />
+    <TypeScriptCompile Include="Scripts\angular\types\basicTypes\ApplicationString.ts" />
+    <TypeScriptCompile Include="Scripts\typings\angularjs\angular-animate.d.ts" />
+    <TypeScriptCompile Include="Scripts\typings\angularjs\angular-cookies.d.ts" />
+    <TypeScriptCompile Include="Scripts\typings\angularjs\angular-mocks.d.ts" />
+    <TypeScriptCompile Include="Scripts\typings\angularjs\angular-resource.d.ts" />
+    <TypeScriptCompile Include="Scripts\typings\angularjs\angular-route.d.ts" />
+    <TypeScriptCompile Include="Scripts\typings\angularjs\angular-sanitize.d.ts" />
+    <TypeScriptCompile Include="Scripts\typings\angularjs\angular.d.ts" />
+    <TypeScriptCompile Include="Scripts\typings\jquery\jquery.d.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
   </PropertyGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
+    <TypeScriptTarget>ES5</TypeScriptTarget>
+    <TypeScriptJSXEmit>None</TypeScriptJSXEmit>
+    <TypeScriptCompileOnSaveEnabled>True</TypeScriptCompileOnSaveEnabled>
+    <TypeScriptNoImplicitAny>False</TypeScriptNoImplicitAny>
+    <TypeScriptModuleKind>None</TypeScriptModuleKind>
+    <TypeScriptRemoveComments>False</TypeScriptRemoveComments>
+    <TypeScriptOutFile>
+    </TypeScriptOutFile>
+    <TypeScriptOutDir>
+    </TypeScriptOutDir>
+    <TypeScriptGeneratesDeclarations>False</TypeScriptGeneratesDeclarations>
+    <TypeScriptNoEmitOnError>True</TypeScriptNoEmitOnError>
+    <TypeScriptSourceMap>True</TypeScriptSourceMap>
+    <TypeScriptMapRoot />
+    <TypeScriptSourceRoot />
+  </PropertyGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets')" />
   <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
   <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">

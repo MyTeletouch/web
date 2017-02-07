@@ -16,11 +16,11 @@ namespace MyTeletouch.Repositories
 
         public const string CartSessionKey = "CartId";
 
-        private ProductDbContext _db;
+        private OrderDbContext _db;
 
-        public ShoppingCartRepository() : base(new ProductDbContext())
+        public ShoppingCartRepository() : base(new OrderDbContext())
         {
-            _db = dbSet as ProductDbContext;
+            _db = dbSet as OrderDbContext;
         }
 
         /// <summary>
